@@ -63,19 +63,17 @@ async function checkAuth() {
     return session;
 }
 
-const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
-const ACCEPTED_IMAGE_TYPES = ["image/jpeg", "image/jpg", "image/png", "image/webp"];
+const MAX_FILE_SIZE = 25 * 1024 * 1024; // 25MB
 
 async function saveFile(file: File): Promise<string> {
     console.log("[SAVE_FILE] Starting save for:", file.name, "type:", file.type, "size:", file.size);
-    // Security: Validate file type and size
     if (file.size > MAX_FILE_SIZE) {
         console.error("[SAVE_FILE] Size exceeded:", file.size);
-        throw new Error("File size exceeds 5MB limit");
+        throw new Error("File size exceeds 25MB limit. Please select a smaller photo.");
     }
-    if (!ACCEPTED_IMAGE_TYPES.includes(file.type)) {
+    if (file.type && !file.type.startsWith("image/") && !file.name.match(/\.(jpg|jpeg|png|webp|gif|avif|heic|jfif)$/i)) {
         console.error("[SAVE_FILE] Invalid type:", file.type);
-        throw new Error("Only .jpg, .png and .webp formats are supported");
+        throw new Error("Only image formats (.jpg, .png, .webp, .avif, .heic) are supported");
     }
 
     // --- Production Fix: Supabase Storage Support ---
