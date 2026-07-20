@@ -4,13 +4,13 @@ import { TourCard } from '@/components/ui/TourCard';
 import { SearchInput } from '@/components/ui/SearchInput';
 import { prisma } from '@/lib/db';
 import { getSiteSettings } from '@/lib/settings';
-import { CONTACT_INFO } from '@/lib/data';
+import { CONTACT_INFO, TOURS } from '@/lib/data';
 import { SectionSkeleton } from '@/components/ui/Skeletons';
 
 export const dynamic = 'force-dynamic';
 
 async function ToursContent({ search }: { search?: string }) {
-    const tours = await prisma.tour.findMany({
+    const dbTours = await prisma.tour.findMany({
         where: search ? {
             OR: [
                 { title: { contains: search, mode: 'insensitive' } },
@@ -22,11 +22,49 @@ async function ToursContent({ search }: { search?: string }) {
         take: 100
     });
 
+    const filteredCurated = search
+        ? TOURS.filter(t => 
+            t.title.toLowerCase().includes(search.toLowerCase()) || 
+            t.destination.toLowerCase().includes(search.toLowerCase()) || 
+            t.description.toLowerCase().includes(search.toLowerCase())
+          )
+        : TOURS;
+
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {tours.map((tour) => (
-                <TourCard key={tour.id} tour={tour} />
-            ))}
+        <div className="space-y-20">
+            {/* 1. Curated Featured Packages (15 High Quality Local Tours) */}
+            {filteredCurated.length > 0 && (
+                <div>
+                    <div className="flex items-center gap-3 mb-8">
+                        <span className="w-3 h-3 rounded-full bg-primary animate-pulse" />
+                        <h2 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
+                            Featured Nenmara & Kerala Tour Packages
+                        </h2>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {filteredCurated.map((tour) => (
+                            <TourCard key={tour.id} tour={tour as any} />
+                        ))}
+                    </div>
+                </div>
+            )}
+
+            {/* 2. Admin Uploaded Dynamic Packages Below */}
+            {dbTours.length > 0 && (
+                <div className="pt-12 border-t border-slate-200 dark:border-slate-800">
+                    <div className="flex items-center gap-3 mb-8">
+                        <span className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
+                        <h2 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white tracking-tight">
+                            Custom & Admin Added Packages
+                        </h2>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {dbTours.map((tour) => (
+                            <TourCard key={tour.id} tour={tour} />
+                        ))}
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

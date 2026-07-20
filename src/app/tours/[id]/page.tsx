@@ -14,15 +14,18 @@ import {
 } from 'lucide-react';
 import { prisma } from '@/lib/db';
 import { Button } from '@/components/ui/Button';
-import { CONTACT_INFO } from '@/lib/data';
+import { CONTACT_INFO, TOURS } from '@/lib/data';
 import type { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
     const { id } = await params;
-    const siteUrl = process.env.NEXTAUTH_URL || 'https://vela-travels-kkos-seven.vercel.app';
-    const tour = await prisma.tour.findUnique({
-        where: { id },
-    });
+    const siteUrl = process.env.NEXTAUTH_URL || 'https://velatravelsco.com';
+    let tour = TOURS.find(t => t.id === id) as any;
+    if (!tour) {
+        tour = await prisma.tour.findUnique({
+            where: { id },
+        });
+    }
 
     if (!tour) {
         return {
@@ -58,9 +61,12 @@ export default async function TourDetailPage({
 }) {
     const { id } = await params;
 
-    const tour = await prisma.tour.findUnique({
-        where: { id },
-    });
+    let tour = TOURS.find(t => t.id === id) as any;
+    if (!tour) {
+        tour = await prisma.tour.findUnique({
+            where: { id },
+        });
+    }
 
     if (!tour) {
         notFound();
