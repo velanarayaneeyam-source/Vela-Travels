@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/admin/', '/api/'],
     },
-    sitemap: `${process.env.NEXTAUTH_URL || 'https://vela-travels-kkos-seven.vercel.app'}/sitemap.xml`,
+    sitemap: `${process.env.NEXTAUTH_URL || 'https://velatravelsco.com'}/sitemap.xml`,
   };
 }

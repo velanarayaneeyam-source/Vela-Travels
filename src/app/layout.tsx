@@ -13,7 +13,7 @@ const outfit = Outfit({
   variable: "--font-outfit",
 });
 
-const siteUrl = process.env.NEXTAUTH_URL || 'https://vela-travels-kkos-seven.vercel.app';
+const siteUrl = process.env.NEXTAUTH_URL || 'https://velatravelsco.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

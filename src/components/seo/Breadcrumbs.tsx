@@ -12,7 +12,7 @@ interface BreadcrumbsProps {
 }
 
 export function Breadcrumbs({ items }: BreadcrumbsProps) {
-  const siteUrl = process.env.NEXTAUTH_URL || 'https://vela-travels-kkos-seven.vercel.app';
+  const siteUrl = process.env.NEXTAUTH_URL || 'https://velatravelsco.com';
 
   const fullItems = [
     { name: 'Home', url: '/' },
