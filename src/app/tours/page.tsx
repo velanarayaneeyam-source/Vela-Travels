@@ -245,6 +245,111 @@ export default async function ToursPage({
                         </div>
                     </div>
 
+                    {/* --- Sky-Blue Multi-Device Travel Template Showcase Banner (Matching Reference Screenshot) --- */}
+                    <div className="relative bg-gradient-to-b from-sky-400/25 via-blue-500/15 to-indigo-600/25 border-2 border-blue-200/60 rounded-[3rem] p-8 md:p-14 overflow-hidden shadow-2xl backdrop-blur-xl">
+                        
+                        {/* Background Decorative Flight Path SVG & Sky Clouds */}
+                        <div className="absolute inset-0 pointer-events-none opacity-40">
+                            <svg className="w-full h-full" viewBox="0 0 1000 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M50 350 C 250 150, 450 50, 650 150 C 850 250, 950 100, 980 50" stroke="#3b82f6" strokeWidth="3" strokeDasharray="8 8" />
+                            </svg>
+                            <div className="absolute top-8 right-16 text-4xl animate-bounce">✈️</div>
+                            <div className="absolute top-1/4 left-1/3 w-64 h-64 bg-blue-400/20 rounded-full blur-3xl" />
+                        </div>
+
+                        {/* Title & Description Header */}
+                        <div className="relative z-10 text-center max-w-4xl mx-auto space-y-4 mb-12">
+                            <span className="inline-block py-1.5 px-4 rounded-full bg-blue-600/10 border border-blue-600/20 text-blue-700 dark:text-blue-400 text-xs font-black uppercase tracking-[0.25em]">
+                                🌐 Premium Kerala Tour & Travel Experience
+                            </span>
+                            <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
+                                Best Tours & Travel Packages in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">Nenmara & Palakkad</span>
+                            </h2>
+                            <p className="text-slate-600 dark:text-slate-300 text-base md:text-lg font-medium max-w-2xl mx-auto leading-relaxed">
+                                Book custom sightseeing packages, outstation cabs, and hill station tours with verified local drivers and 24/7 assistance.
+                            </p>
+                        </div>
+
+                        {/* Multi-Device Mockup Showcase Layout (Laptop + Tablet + Smartphone) */}
+                        <div className="relative z-10 max-w-5xl mx-auto flex flex-col md:flex-row items-end justify-center gap-6 pt-4 pb-8">
+                            
+                            {/* Device 1: Tablet Mockup (Left) */}
+                            <div className="w-full md:w-1/3 bg-slate-900 p-4 rounded-3xl border-4 border-slate-800 shadow-2xl shadow-blue-900/30 transform hover:-translate-y-2 transition-transform duration-500">
+                                <div className="bg-slate-950 rounded-2xl p-4 text-white space-y-3">
+                                    <div className="flex items-center justify-between text-[10px] text-slate-400 font-bold border-b border-white/10 pb-2">
+                                        <span>📍 VELA TRAVELS</span>
+                                        <span className="text-emerald-400">● 24/7 ONLINE</span>
+                                    </div>
+                                    <div className="text-xs font-black text-emerald-400">🌲 Hill Station Packages</div>
+                                    <div className="bg-slate-900 p-3 rounded-xl border border-white/10 space-y-1">
+                                        <div className="text-[11px] font-bold text-white">Nelliampathy Hills Tour</div>
+                                        <div className="text-[9px] text-slate-400">Viewpoint, Tea Gardens & Dam Visit</div>
+                                        <div className="text-[10px] font-extrabold text-blue-400 pt-1">₹ Custom Family Rate</div>
+                                    </div>
+                                    <div className="bg-slate-900 p-3 rounded-xl border border-white/10 space-y-1">
+                                        <div className="text-[11px] font-bold text-white">Parambikulam Tiger Reserve</div>
+                                        <div className="text-[9px] text-slate-400">Jungle Safari & Teak Museum</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Device 2: Smartphone Mockup (Center Foreground) */}
+                            <div className="w-full md:w-1/4 bg-slate-900 p-3 rounded-[2rem] border-4 border-slate-800 shadow-2xl shadow-indigo-900/40 z-20 transform hover:-translate-y-3 transition-transform duration-500">
+                                <div className="w-12 h-1.5 bg-slate-800 rounded-full mx-auto mb-2" />
+                                <div className="bg-gradient-to-b from-blue-950 to-slate-950 rounded-2xl p-4 text-white space-y-3">
+                                    <div className="text-[11px] font-black text-center text-blue-400 tracking-wider">
+                                        📱 INSTANT BOOKING
+                                    </div>
+                                    <div className="bg-blue-600/30 p-2.5 rounded-xl border border-blue-500/30 text-center">
+                                        <div className="text-[10px] font-extrabold text-white">Toyota Innova Crysta</div>
+                                        <div className="text-[9px] text-blue-200">AC / 7 Seater Luxury</div>
+                                    </div>
+                                    <a href="/contact" className="block text-center bg-blue-600 text-white font-extrabold text-[11px] py-2.5 rounded-xl shadow-lg hover:bg-blue-500 transition-colors">
+                                        Book Cab Now &rarr;
+                                    </a>
+                                </div>
+                            </div>
+
+                            {/* Device 3: Laptop Showcase (Right) */}
+                            <div className="w-full md:w-1/2 bg-slate-900 p-5 rounded-3xl border-4 border-slate-800 shadow-2xl shadow-blue-900/30 transform hover:-translate-y-2 transition-transform duration-500">
+                                <div className="bg-slate-950 rounded-2xl p-5 text-white space-y-4">
+                                    <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                                        <div className="text-sm font-black text-white">Let's travel and explore</div>
+                                        <div className="text-[10px] font-bold bg-primary/20 text-primary px-3 py-1 rounded-full">Top Destinations</div>
+                                    </div>
+                                    <div className="grid grid-cols-2 gap-3">
+                                        <div className="bg-slate-900 p-3 rounded-xl border border-white/10">
+                                            <div className="text-xs font-bold text-white">🛕 Guruvayur Pilgrimage</div>
+                                            <div className="text-[9px] text-slate-400">Temple Taxi Service</div>
+                                        </div>
+                                        <div className="bg-slate-900 p-3 rounded-xl border border-white/10">
+                                            <div className="text-xs font-bold text-white">✈️ Airport Pickup</div>
+                                            <div className="text-[9px] text-slate-400">COK / CJB Transfers</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        {/* Bottom Action Bar */}
+                        <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
+                            <a 
+                                href="/contact"
+                                className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-black text-sm uppercase tracking-wider shadow-xl shadow-blue-600/30 transition-all text-center"
+                            >
+                                Plan Custom Tour Package &rarr;
+                            </a>
+                            <a 
+                                href="/cars"
+                                className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white hover:bg-slate-100 text-slate-900 border-2 border-slate-200 font-extrabold text-sm uppercase tracking-wider shadow-md transition-all text-center"
+                            >
+                                View Rental Fleet
+                            </a>
+                        </div>
+
+                    </div>
+
                 </div>
 
                 <Suspense fallback={<div className="h-64 animate-pulse bg-slate-100 rounded-[3rem] mt-20" />}>
