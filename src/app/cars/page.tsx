@@ -7,6 +7,8 @@ import { prisma } from '@/lib/db';
 import { getSiteSettings } from '@/lib/settings';
 import { CONTACT_INFO } from '@/lib/data';
 import { CarCardSkeleton } from '@/components/ui/Skeletons';
+import { FaqSection } from '@/components/seo/FaqSection';
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 
 export const revalidate = 3600;
 
@@ -142,6 +144,11 @@ export default async function CarsPage({
                 }>
                     <CarsContent search={search} />
                 </Suspense>
+
+                <FaqSection
+                    title="Nenmara & Palakkad Car Rental FAQs"
+                    subtitle="Common questions about self-drive rentals, taxi fares, airport pickups, and booking policies."
+                />
 
                 <Suspense fallback={<div className="h-96 animate-pulse bg-white/5 rounded-[4rem] mt-32" />}>
                     <CarsCTA />

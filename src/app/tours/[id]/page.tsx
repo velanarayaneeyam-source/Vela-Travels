@@ -19,24 +19,35 @@ import type { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
     const { id } = await params;
+    const siteUrl = process.env.NEXTAUTH_URL || 'https://vela-travels-kkos-seven.vercel.app';
     const tour = await prisma.tour.findUnique({
         where: { id },
     });
 
     if (!tour) {
         return {
-            title: 'Tour Not Found',
+            title: 'Tour Package Not Found | Vela Travels',
         };
     }
 
     return {
-        title: `${tour.title} | GP Travels`,
-        description: tour.description.substring(0, 160),
+        title: `${tour.title} Tour Package | Vela Travels Nenmara`,
+        description: `${tour.description.substring(0, 150)}... Book ${tour.title} with Vela Travels in Nenmara, Palakkad.`,
+        alternates: {
+            canonical: `${siteUrl}/tours/${id}`,
+        },
         openGraph: {
-            title: `${tour.title} | GP Travels`,
+            title: `${tour.title} | Vela Travels Nenmara Palakkad`,
+            description: tour.description.substring(0, 160),
+            url: `${siteUrl}/tours/${id}`,
+            images: [{ url: tour.image, width: 1200, height: 630, alt: tour.title }],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: `${tour.title} | Vela Travels Nenmara`,
             description: tour.description.substring(0, 160),
             images: [tour.image],
-        },
+        }
     };
 }
 
@@ -55,8 +66,35 @@ export default async function TourDetailPage({
         notFound();
     }
 
+    const siteUrl = process.env.NEXTAUTH_URL || 'https://vela-travels-kkos-seven.vercel.app';
+    const jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'TouristTrip',
+        'name': tour.title,
+        'description': tour.description,
+        'image': tour.image,
+        'touristType': ['Family', 'Group', 'Solo'],
+        'offers': {
+            '@type': 'Offer',
+            'price': tour.price.replace(/[^0-9]/g, '') || '0',
+            'priceCurrency': 'INR',
+            'availability': 'https://schema.org/InStock',
+            'url': `${siteUrl}/tours/${tour.id}`,
+        },
+        'provider': {
+            '@type': 'TravelAgency',
+            'name': 'Vela Travels',
+            'telephone': '+919207050525',
+            'url': siteUrl,
+        }
+    };
+
     return (
         <main className="min-h-screen pt-48 pb-24 px-6 md:px-12 bg-[#020617] text-white">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <div className="max-w-7xl mx-auto">
                 <Link
                     href="/tours"
