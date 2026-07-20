@@ -55,6 +55,15 @@ export default function TourForm({ tour }: TourFormProps) {
         setLoading(true);
         setStatus(null);
         try {
+            const imageFile = formData.get("image-file") as File;
+            const imageUrl = formData.get("image-url") as string;
+
+            if (!isEditing && (!imageFile || imageFile.size === 0) && !imageUrl && !previewUrl) {
+                setStatus({ type: 'error', message: 'Please choose an image file or paste an image URL.' });
+                setLoading(false);
+                return;
+            }
+
             let res;
             if (isEditing) {
                 res = await updateTour(tour.id, formData);
