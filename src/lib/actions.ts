@@ -18,11 +18,11 @@ import bcrypt from "bcryptjs";
 // --- Validation Schemas ---
 
 const TourSchema = z.object({
-    title: z.string().min(3, "Title must be at least 3 characters"),
-    description: z.string().default(""),
-    destination: z.string().min(2, "Destination is required"),
-    price: z.string().min(1, "Price is required"),
-    duration: z.string().min(1, "Duration is required"),
+    title: z.string().optional().transform(val => (val && val.trim()) ? val.trim() : "Tour Package"),
+    description: z.string().optional().transform(val => val || ""),
+    destination: z.string().optional().transform(val => (val && val.trim()) ? val.trim() : "Kerala"),
+    price: z.string().optional().transform(val => (val && val.trim()) ? val.trim() : "Contact for Price"),
+    duration: z.string().optional().transform(val => (val && val.trim()) ? val.trim() : "Custom"),
     featured: z.boolean().default(false),
 });
 

@@ -91,55 +91,51 @@ export default function TourForm({ tour }: TourFormProps) {
 
                         <div className="space-y-6">
                             <div className="space-y-2">
-                                <label className="text-sm font-bold text-slate-400 uppercase tracking-tighter">Tour Title</label>
+                                <label className="text-sm font-bold text-slate-400 uppercase tracking-tighter">Tour Title (Optional)</label>
                                 <input
                                     name="title"
                                     type="text"
                                     defaultValue={tour?.title}
-                                    placeholder="e.g. Exotic Paradise Getaway"
+                                    placeholder="e.g. Exotic Paradise Getaway (Optional)"
                                     className="w-full px-5 py-4 bg-slate-950/50 border border-white/10 rounded-2xl text-white outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-                                    required
                                 />
                             </div>
 
                             <div className="space-y-2">
-                                <label className="text-sm font-bold text-slate-400 uppercase tracking-tighter">Description</label>
+                                <label className="text-sm font-bold text-slate-400 uppercase tracking-tighter">Description (Optional)</label>
                                 <textarea
                                     name="description"
                                     rows={6}
                                     defaultValue={tour?.description}
-                                    placeholder="Tell the story of this amazing destination..."
+                                    placeholder="Tell the story of this amazing destination... (Optional)"
                                     className="w-full px-5 py-4 bg-slate-950/50 border border-white/10 rounded-2xl text-white outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none"
-                                    required
                                 />
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
-                                    <label className="text-sm font-bold text-slate-400 uppercase tracking-tighter">Destination</label>
+                                    <label className="text-sm font-bold text-slate-400 uppercase tracking-tighter">Destination (Optional)</label>
                                     <div className="relative">
                                         <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-600" />
                                         <input
                                             name="destination"
                                             type="text"
                                             defaultValue={tour?.destination}
-                                            placeholder="e.g. Bali, Indonesia"
+                                            placeholder="e.g. Nenmara, Kerala (Optional)"
                                             className="w-full pl-12 pr-5 py-4 bg-slate-950/50 border border-white/10 rounded-2xl text-white outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-                                            required
                                         />
                                     </div>
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-sm font-bold text-slate-400 uppercase tracking-tighter">Duration</label>
+                                    <label className="text-sm font-bold text-slate-400 uppercase tracking-tighter">Duration (Optional)</label>
                                     <div className="relative">
                                         <Clock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-600" />
                                         <input
                                             name="duration"
                                             type="text"
                                             defaultValue={tour?.duration}
-                                            placeholder="e.g. 7 Days / 6 Nights"
+                                            placeholder="e.g. 1 Day (Optional)"
                                             className="w-full pl-12 pr-5 py-4 bg-slate-950/50 border border-white/10 rounded-2xl text-white outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-                                            required
                                         />
                                     </div>
                                 </div>
@@ -151,16 +147,15 @@ export default function TourForm({ tour }: TourFormProps) {
                         <h2 className="text-xl font-bold text-white mb-6">Price & Promotions</h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="space-y-2">
-                                <label className="text-sm font-bold text-slate-400 uppercase tracking-tighter">Price Range</label>
+                                <label className="text-sm font-bold text-slate-400 uppercase tracking-tighter">Price Range (Optional)</label>
                                 <div className="relative">
                                     <IndianRupee className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-600" />
                                     <input
                                         name="price"
                                         type="text"
                                         defaultValue={tour?.price}
-                                        placeholder="e.g. ₹1,200 - ₹1,500"
+                                        placeholder="e.g. Contact for Price (Optional)"
                                         className="w-full pl-12 pr-5 py-4 bg-slate-950/50 border border-white/10 rounded-2xl text-white outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-                                        required
                                     />
                                 </div>
                             </div>
