@@ -179,15 +179,15 @@ export default async function CarsPage({
                         {/* Right Multi-Device Mockup Cards (Matching Image 2 Badge & Device Grid) */}
                         <div className="lg:col-span-5 relative space-y-4">
                             
-                            {/* Top Badge Pills Bar */}
-                            <div className="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-none">
-                                <span className="px-4 py-2 rounded-xl bg-teal-500/20 border border-teal-500/30 text-teal-300 text-xs font-bold whitespace-nowrap flex items-center gap-1.5">
+                            {/* Top Badge Pills Bar (Flex Wrap so all badges are visible) */}
+                            <div className="flex flex-wrap items-center gap-3">
+                                <span className="px-4 py-2 rounded-xl bg-teal-500/20 border border-teal-500/30 text-teal-300 text-xs font-bold flex items-center gap-1.5">
                                     ✈️ Airport Transfers
                                 </span>
-                                <span className="px-4 py-2 rounded-xl bg-blue-500/20 border border-blue-500/30 text-blue-300 text-xs font-bold whitespace-nowrap flex items-center gap-1.5">
+                                <span className="px-4 py-2 rounded-xl bg-blue-500/20 border border-blue-500/30 text-blue-300 text-xs font-bold flex items-center gap-1.5">
                                     🏨 Doorstep Pickup
                                 </span>
-                                <span className="px-4 py-2 rounded-xl bg-amber-500/20 border border-amber-500/30 text-amber-300 text-xs font-bold whitespace-nowrap flex items-center gap-1.5">
+                                <span className="px-4 py-2 rounded-xl bg-amber-500/20 border border-amber-500/30 text-amber-300 text-xs font-bold flex items-center gap-1.5">
                                     📍 Palakkad & Nenmara
                                 </span>
                             </div>

@@ -17,41 +17,31 @@ export const HeroSection = ({ settings }: HeroSectionProps) => {
     const heroImage = settings.heroImageUrl || "/hero-traveller.png";
 
     return (
-        <section className="relative min-h-[70vh] md:min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-0 gpu-boost bg-slate-950">
+        <section className="relative min-h-screen flex flex-col justify-between overflow-hidden pt-44 sm:pt-52 md:pt-44 gpu-boost bg-slate-950">
             <div className="absolute inset-0 z-0 flex items-center justify-center">
                 <Image
                     src={heroImage}
                     alt="Travel Background"
                     fill
-                    className="hidden md:block object-cover scale-100 transition-opacity duration-700 brightness-[1.12]"
+                    className="object-cover object-center scale-100 transition-opacity duration-700 brightness-[1.08]"
                     priority
                 />
 
-                <div className="md:hidden absolute inset-0 bg-black">
-                    <Image
-                        src={heroImage}
-                        alt="Travel Background Mobile"
-                        fill
-                        className="object-cover object-[25%_center] brightness-[1.1]"
-                        priority
-                    />
-                </div>
-
-                <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30" />
-                <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-background to-transparent z-20" />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
+                <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent z-20" />
             </div>
 
             <div className="container mx-auto px-6 relative z-10">
-                <div className="flex flex-col items-center justify-center pt-8 md:pt-24 pb-12 md:pb-48 text-center">
+                <div className="flex flex-col items-center justify-center pt-4 sm:pt-8 md:pt-16 pb-16 md:pb-36 text-center">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8 }}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border-white/10 text-white mb-6 md:mb-8"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass border-white/20 text-white mb-6 md:mb-8 shadow-xl bg-black/40 backdrop-blur-md"
                     >
-                        <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-                        <span className="text-sm font-medium tracking-wide flex items-center gap-2">
-                            <Plane className="w-4 h-4" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-pink-500 animate-pulse shadow-[0_0_10px_rgba(236,72,153,0.8)]" />
+                        <span className="text-xs sm:text-sm font-extrabold tracking-wider flex items-center gap-2 text-white">
+                            <Plane className="w-4 h-4 text-pink-400" />
                             YOUR JOURNEY STARTS HERE
                         </span>
                     </motion.div>
@@ -60,13 +50,18 @@ export const HeroSection = ({ settings }: HeroSectionProps) => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="text-4xl sm:text-5xl md:text-8xl font-black text-white mb-6 md:mb-8 tracking-tighter leading-[1.1] drop-shadow-2xl"
+                        className="text-4xl sm:text-6xl md:text-8xl font-black text-white mb-6 md:mb-8 tracking-tighter leading-[1.1] drop-shadow-2xl"
                     >
                         {settings.heroTitle ? (
-                            <span dangerouslySetInnerHTML={{ __html: settings.heroTitle.replace(/Traveller/i, '<span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-pink-400">Traveller</span>').replace(/Vehicles/i, '<span class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-pink-400">Vehicles</span>') }} />
+                            <span dangerouslySetInnerHTML={{ 
+                                __html: settings.heroTitle
+                                    .replace(/Amazing/gi, '<span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-pink-400 font-black drop-shadow-[0_0_25px_rgba(236,72,153,0.9)]">Amazing</span>')
+                                    .replace(/Traveller/gi, '<span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-pink-400 font-black drop-shadow-[0_0_25px_rgba(236,72,153,0.9)]">Traveller</span>')
+                                    .replace(/Vehicles/gi, '<span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-pink-400 font-black drop-shadow-[0_0_25px_rgba(236,72,153,0.9)]">Vehicles</span>') 
+                            }} />
                         ) : (
-                            <>Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-pink-400">Traveller</span> <br />
-                            & Vehicle Rentals</>
+                            <>Discover <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-pink-400 font-black drop-shadow-[0_0_25px_rgba(236,72,153,0.9)]">Amazing</span> <br />
+                            Kerala Tours & Vehicles</>
                         )}
                     </motion.h1>
 
@@ -74,7 +69,7 @@ export const HeroSection = ({ settings }: HeroSectionProps) => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="text-base md:text-xl text-white max-w-3xl mx-auto mb-8 md:mb-12 font-bold leading-relaxed drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)]"
+                        className="text-base sm:text-lg md:text-xl text-slate-100 max-w-3xl mx-auto mb-8 md:mb-12 font-bold leading-relaxed drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)]"
                     >
                         {subtitle}
                     </motion.p>
