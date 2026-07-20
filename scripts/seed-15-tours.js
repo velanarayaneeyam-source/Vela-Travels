@@ -1,8 +1,9 @@
-import { Tour, Testimonial } from "@/types";
+const { PrismaClient } = require('@prisma/client');
 
-export const TOURS: Tour[] = [
+const prisma = new PrismaClient();
+
+const ACCURATE_KERALA_TOURS = [
     {
-        id: "curated-1",
         title: "Nelliampathy Hills & Seetharkundu Expedition",
         description: "Explore misty tea gardens, cardamom estates, and the legendary Seetharkundu viewpoint in the Western Ghats. Experience cool mountain breezes and panoramic valley views.",
         destination: "Nenmara, Palakkad",
@@ -12,7 +13,6 @@ export const TOURS: Tour[] = [
         featured: true,
     },
     {
-        id: "curated-2",
         title: "Pothundi Dam & Reservoir Family Retreat",
         description: "Visit India's second earth dam constructed in 19th century without cement. Features pristine lake views, lush manicured gardens, and boat rides near Aliyur, Nenmara.",
         destination: "Nenmara, Palakkad",
@@ -22,7 +22,6 @@ export const TOURS: Tour[] = [
         featured: true,
     },
     {
-        id: "curated-3",
         title: "Parambikulam Tiger Reserve & Jungle Safari",
         description: "Deep eco-tourism jungle safari in the Anamalai Hills. Visit the giant Kannimara Teak (world's oldest), enjoy bamboo rafting, and spot wild elephants & wildlife.",
         destination: "Parambikulam, Palakkad",
@@ -32,7 +31,6 @@ export const TOURS: Tour[] = [
         featured: true,
     },
     {
-        id: "curated-4",
         title: "Palakkad Fort (Tipu's Fort) & Heritage Trail",
         description: "Historical tour of the well-preserved granite fort built by Hyder Ali in 1766. Includes Rapadi open-air auditorium and heritage walks through ancient agraharams.",
         destination: "Palakkad Town",
@@ -42,7 +40,6 @@ export const TOURS: Tour[] = [
         featured: true,
     },
     {
-        id: "curated-5",
         title: "Malampuzha Dam, Rock Garden & Cable Car Tour",
         description: "Explore the massive Malampuzha Dam, Kanayi's iconic Yakshi sculpture, Nek Chand's Rock Garden, Snake Park, and scenic passenger ropeway rides.",
         destination: "Malampuzha, Palakkad",
@@ -52,7 +49,6 @@ export const TOURS: Tour[] = [
         featured: true,
     },
     {
-        id: "curated-6",
         title: "Silent Valley Rainforest Expedition",
         description: "Trek through India's last undisturbed evergreen tropical rainforest. Guided bio-diversity tour home to endangered Lion-tailed Macaques and pristine Kunthi River.",
         destination: "Mukkali, Palakkad",
@@ -62,7 +58,6 @@ export const TOURS: Tour[] = [
         featured: true,
     },
     {
-        id: "curated-7",
         title: "Kalpathy Heritage Village & Temple Circuit",
         description: "Immerse yourself in Kerala's first heritage village on the banks of Kalpathy river. Visit the 600-year-old Sri Viswanatha Swamy Temple and Brahmin Agraharams.",
         destination: "Kalpathy, Palakkad",
@@ -72,7 +67,6 @@ export const TOURS: Tour[] = [
         featured: true,
     },
     {
-        id: "curated-8",
         title: "Kava Viewpoint Monsoon & Lake Panorama Drive",
         description: "Known as the 'Rain Capital of Kerala', Kava offers mesmerizing lake reflections, lush mountain backdrops, and scenic Western Ghats driving routes.",
         destination: "Kava, Palakkad",
@@ -82,7 +76,6 @@ export const TOURS: Tour[] = [
         featured: true,
     },
     {
-        id: "curated-9",
         title: "Fantasy Park Water World Family Getaway",
         description: "Action-packed family day at Kerala's pioneer amusement park featuring wave pools, high-speed water slides, 16D planetarium theater, and children's rides.",
         destination: "Malampuzha, Palakkad",
@@ -92,7 +85,6 @@ export const TOURS: Tour[] = [
         featured: true,
     },
     {
-        id: "curated-10",
         title: "Dhoni Waterfalls Trekking & Cattle Farm Experience",
         description: "Guided 3-hour trek through Reserve Forest to the cascading Dhoni Waterfalls, visiting the Indo-Swiss cattle breeding farm and orange plantation.",
         destination: "Dhoni, Palakkad",
@@ -102,7 +94,6 @@ export const TOURS: Tour[] = [
         featured: true,
     },
     {
-        id: "curated-11",
         title: "Chittur Gurumadam & Literary Heritage Trail",
         description: "Visit the sacred ashram on the banks of Sokanasini river where Thunchath Ezhuthachan, Father of Malayalam Language, spent his final years writing epics.",
         destination: "Chittur, Palakkad",
@@ -112,7 +103,6 @@ export const TOURS: Tour[] = [
         featured: true,
     },
     {
-        id: "curated-12",
         title: "Kollengode Palace & Scenic Village Circuit",
         description: "Voted among India's most picturesque villages. Features Kollengode Palace heritage architecture, Seetharkundu cascades, and vast emerald paddy fields.",
         destination: "Kollengode, Palakkad",
@@ -122,7 +112,6 @@ export const TOURS: Tour[] = [
         featured: true,
     },
     {
-        id: "curated-13",
         title: "Munnar Tea Gardens & Misty Peaks Expedition",
         description: "Drive from Palakkad/Nenmara up to Munnar's rolling tea plantations. Visit Eravikulam National Park (home to Nilgiri Tahr), Mattupetty Lake & Echo Point.",
         destination: "Munnar, Idukki",
@@ -132,7 +121,6 @@ export const TOURS: Tour[] = [
         featured: true,
     },
     {
-        id: "curated-14",
         title: "Wayanad Rainforest & Heart Lake Trek",
         description: "Travel to Wayanad's lush highlands. Explore ancient Edakkal Cave carvings, Banasura Sagar Earth Dam, and Chembra Peak heart-shaped lake.",
         destination: "Wayanad, Kerala",
@@ -142,7 +130,6 @@ export const TOURS: Tour[] = [
         featured: true,
     },
     {
-        id: "curated-15",
         title: "Alleppey Houseboat & Backwater Cruise Expedition",
         description: "Experience Kerala's iconic backwaters on a private luxury houseboat. Enjoy traditional Kuttanad seafood cuisine, canal village views & golden sunsets.",
         destination: "Alappuzha, Kerala",
@@ -153,27 +140,31 @@ export const TOURS: Tour[] = [
     },
 ];
 
-export const TESTIMONIALS: Testimonial[] = [
-    {
-        id: "1",
-        name: "Michael Chen",
-        role: "Business Traveler",
-        content: "The Innova Crysta I rented was in pristine condition. The driver was punctual and very professional. Made my business trip across Kerala incredibly smooth!",
-        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop",
-    },
-    {
-        id: "2",
-        name: "Sarah Williams",
-        role: "Family Tourist",
-        content: "We rented a 12-seater tempo traveler for our family vacation. It was spacious, clean, and the AC worked perfectly throughout our entire journey.",
-        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop",
-    },
-];
+async function main() {
+    console.log("Replacing ALL tour images in Supabase DB with verified Kerala photography...");
+    for (const tour of ACCURATE_KERALA_TOURS) {
+        const existing = await prisma.tour.findFirst({
+            where: { title: tour.title }
+        });
+        if (existing) {
+            await prisma.tour.update({
+                where: { id: existing.id },
+                data: { image: tour.image }
+            });
+            console.log(`✅ Updated image for: ${tour.title}`);
+        } else {
+            await prisma.tour.create({ data: tour });
+            console.log(`✅ Created tour: ${tour.title}`);
+        }
+    }
+    console.log("SUCCESS! All 15 tour images replaced with authentic Kerala & Palakkad photos.");
+}
 
-export const CONTACT_INFO = {
-    phone: "+919207050525",
-    whatsapp: "919207050525",
-    email: "velanarayaneeyam@gmail.com",
-    address: "Kerala, India",
-    googleMapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15668.618641913!2d75.7663!3d11.2588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65938563d4747%3A0x321592748acc6753!2sCalicut%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
-};
+main()
+    .catch((e) => {
+        console.error(e);
+        process.exit(1);
+    })
+    .finally(async () => {
+        await prisma.$disconnect();
+    });
