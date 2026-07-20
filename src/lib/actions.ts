@@ -18,12 +18,12 @@ import bcrypt from "bcryptjs";
 // --- Validation Schemas ---
 
 const TourSchema = z.object({
-    title: z.string().optional().transform(val => (val && val.trim()) ? val.trim() : "Tour Package"),
-    description: z.string().optional().transform(val => val || ""),
-    destination: z.string().optional().transform(val => (val && val.trim()) ? val.trim() : "Kerala"),
-    price: z.string().optional().transform(val => (val && val.trim()) ? val.trim() : "Contact for Price"),
-    duration: z.string().optional().transform(val => (val && val.trim()) ? val.trim() : "Custom"),
-    featured: z.boolean().default(false),
+    title: z.union([z.string(), z.null(), z.undefined()]).transform(val => (val && typeof val === 'string' && val.trim()) ? val.trim() : "Tour Package"),
+    description: z.union([z.string(), z.null(), z.undefined()]).transform(val => (val && typeof val === 'string') ? val : ""),
+    destination: z.union([z.string(), z.null(), z.undefined()]).transform(val => (val && typeof val === 'string' && val.trim()) ? val.trim() : "Kerala"),
+    price: z.union([z.string(), z.null(), z.undefined()]).transform(val => (val && typeof val === 'string' && val.trim()) ? val.trim() : "Contact for Price"),
+    duration: z.union([z.string(), z.null(), z.undefined()]).transform(val => (val && typeof val === 'string' && val.trim()) ? val.trim() : "Custom Package"),
+    featured: z.union([z.boolean(), z.null(), z.undefined()]).transform(val => val === true),
 });
 
 const InquirySchema = z.object({
