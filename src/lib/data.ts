@@ -6,7 +6,7 @@ export const TOURS: Tour[] = [
         title: "Nelliampathy Hills & Seetharkundu Expedition",
         description: "Explore misty tea gardens, cardamom estates, and the legendary Seetharkundu viewpoint in the Western Ghats. Experience cool mountain breezes and panoramic valley views.",
         destination: "Nenmara, Palakkad",
-        image: "https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=2070&auto=format&fit=crop",
+        image: "https://btgxgtgwbhubyebqwtgj.supabase.co/storage/v1/object/public/uploads/nelliampathy-seetharkundu-1784535698160.jpg",
         price: "₹3,500",
         duration: "1 Day Package",
         featured: true,
