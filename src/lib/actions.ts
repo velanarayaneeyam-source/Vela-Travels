@@ -161,77 +161,85 @@ async function saveFile(file: File): Promise<string> {
 // --- Server Actions ---
 
 export async function createTour(formData: FormData) {
-    await checkAuth();
+    try {
+        await checkAuth();
 
-    const data = {
-        title: formData.get("title") as string,
-        description: formData.get("description") as string,
-        destination: formData.get("destination") as string,
-        price: formData.get("price") as string,
-        duration: formData.get("duration") as string,
-        featured: formData.get("featured") === "on",
-    };
+        const data = {
+            title: formData.get("title") as string,
+            description: formData.get("description") as string,
+            destination: formData.get("destination") as string,
+            price: formData.get("price") as string,
+            duration: formData.get("duration") as string,
+            featured: formData.get("featured") === "on",
+        };
 
-    // Validate
-    const validated = TourSchema.parse(data);
+        const validated = TourSchema.parse(data);
 
-    let imageUrl = formData.get("image-url") as string;
-    const imageFile = formData.get("image-file") as File;
+        let imageUrl = formData.get("image-url") as string;
+        const imageFile = formData.get("image-file") as File;
 
-    if (imageFile && imageFile.size > 0) {
-        imageUrl = await saveFile(imageFile);
+        if (imageFile && imageFile.size > 0) {
+            imageUrl = await saveFile(imageFile);
+        }
+
+        await prisma.tour.create({
+            data: {
+                ...validated,
+                image: imageUrl || "/placeholder-tour.jpg",
+            },
+        });
+
+        revalidatePath("/veela-travels-2026/tours");
+        revalidatePath("/tours");
+        revalidatePath("/");
+        return { success: true };
+    } catch (error: any) {
+        console.error("[CREATE_TOUR] Error:", error);
+        return { success: false, error: error.message || "Failed to create tour package" };
     }
-
-    await prisma.tour.create({
-        data: {
-            ...validated,
-            image: imageUrl || "/placeholder-tour.jpg",
-        },
-    });
-
-    revalidatePath("/veela-travels-2026/tours");
-    revalidatePath("/tours");
-    revalidatePath("/");
-    redirect("/veela-travels-2026/tours");
 }
 
 export async function updateTour(id: string, formData: FormData) {
-    await checkAuth();
+    try {
+        await checkAuth();
 
-    const data = {
-        title: formData.get("title") as string,
-        description: formData.get("description") as string,
-        destination: formData.get("destination") as string,
-        price: formData.get("price") as string,
-        duration: formData.get("duration") as string,
-        featured: formData.get("featured") === "on",
-    };
+        const data = {
+            title: formData.get("title") as string,
+            description: formData.get("description") as string,
+            destination: formData.get("destination") as string,
+            price: formData.get("price") as string,
+            duration: formData.get("duration") as string,
+            featured: formData.get("featured") === "on",
+        };
 
-    const validated = TourSchema.parse(data);
+        const validated = TourSchema.parse(data);
 
-    let imageUrl = formData.get("image-url") as string;
-    const imageFile = formData.get("image-file") as File;
+        let imageUrl = formData.get("image-url") as string;
+        const imageFile = formData.get("image-file") as File;
 
-    if (imageFile && imageFile.size > 0) {
-        imageUrl = await saveFile(imageFile);
+        if (imageFile && imageFile.size > 0) {
+            imageUrl = await saveFile(imageFile);
+        }
+
+        const updateData: any = { ...validated };
+        if (imageUrl) {
+            updateData.image = imageUrl;
+        }
+
+        await prisma.tour.update({
+            where: { id },
+            data: updateData,
+        });
+
+        revalidatePath("/veela-travels-2026/tours");
+        revalidatePath(`/veela-travels-2026/tours/${id}`);
+        revalidatePath("/tours");
+        revalidatePath("/");
+        return { success: true };
+    } catch (error: any) {
+        console.error("[UPDATE_TOUR] Error:", error);
+        return { success: false, error: error.message || "Failed to update tour package" };
     }
-
-    // If no new image was provided (either file or URL), we keep the old one
-    const updateData: any = { ...validated };
-    if (imageUrl) {
-        updateData.image = imageUrl;
-    }
-
-    await prisma.tour.update({
-        where: { id },
-        data: updateData,
-    });
-
-    revalidatePath("/veela-travels-2026/tours");
-    revalidatePath(`/veela-travels-2026/tours/${id}`);
-    revalidatePath("/tours");
-    revalidatePath("/");
-    redirect("/veela-travels-2026/tours");
 }
 
 export async function deleteTour(id: string) {

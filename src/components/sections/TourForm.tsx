@@ -55,15 +55,22 @@ export default function TourForm({ tour }: TourFormProps) {
         setLoading(true);
         setStatus(null);
         try {
+            let res;
             if (isEditing) {
-                await updateTour(tour.id, formData);
-                setStatus({ type: 'success', message: 'Tour updated successfully!' });
+                res = await updateTour(tour.id, formData);
             } else {
-                await createTour(formData);
-                setStatus({ type: 'success', message: 'Tour created successfully!' });
+                res = await createTour(formData);
             }
-            // Optional: redirect or clear form after delay
-            setTimeout(() => setStatus(null), 5000);
+
+            if (res && res.success === false) {
+                setStatus({ type: 'error', message: res.error || 'Failed to save tour package.' });
+            } else {
+                setStatus({ type: 'success', message: isEditing ? 'Tour updated successfully!' : 'Tour created successfully!' });
+                setTimeout(() => {
+                    router.push("/veela-travels-2026/tours");
+                    router.refresh();
+                }, 1000);
+            }
         } catch (error: any) {
             console.error(error);
             setStatus({ type: 'error', message: error.message || 'Something went wrong. Please try again.' });
