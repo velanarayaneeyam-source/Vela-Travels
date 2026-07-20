@@ -139,105 +139,105 @@ export default async function ToursPage({
                         </p>
                     </div>
 
-                    {/* 4 Feature Cards Grid with Rich Colorful Full Gradients */}
+                    {/* 4 Feature Cards Grid with Bright, Colorful Light Cards */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         
-                        {/* Card 1: Hill Station & Eco Tours (Vibrant Emerald Gradient) */}
-                        <div className="group relative bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-900 border-2 border-emerald-400/40 p-8 rounded-[2.5rem] transition-all duration-500 hover:-translate-y-2.5 overflow-hidden shadow-2xl shadow-emerald-600/30">
-                            <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-3xl mb-6 shadow-inner border border-white/30 group-hover:scale-110 transition-transform">
+                        {/* Card 1: Hill Station & Eco Tours (Fresh Emerald Light Card) */}
+                        <div className="group relative bg-emerald-50/90 border-2 border-emerald-300 hover:border-emerald-600 p-8 rounded-[2.5rem] transition-all duration-500 hover:-translate-y-2.5 overflow-hidden shadow-xl shadow-emerald-500/10">
+                            <div className="w-16 h-16 rounded-2xl bg-emerald-500 flex items-center justify-center text-white text-3xl mb-6 shadow-lg shadow-emerald-500/30 group-hover:scale-110 transition-transform">
                                 🌲
                             </div>
-                            <h3 className="text-2xl font-black text-white mb-3 tracking-tight drop-shadow-md">
+                            <h3 className="text-2xl font-black text-emerald-950 mb-3 tracking-tight">
                                 Hill Station & Eco Tours
                             </h3>
-                            <p className="text-emerald-50 text-sm font-medium leading-relaxed mb-8 drop-shadow-sm">
+                            <p className="text-emerald-900 text-sm font-semibold leading-relaxed mb-8">
                                 Explore Nelliampathy Hills, Seetharkundu viewpoint, tea estates & Pothundi Dam with expert guidance.
                             </p>
                             <a 
                                 href="/contact" 
-                                className="inline-flex items-center gap-2 text-xs font-black text-white bg-white/20 hover:bg-white hover:text-emerald-950 px-5 py-3 rounded-xl border border-white/30 transition-all uppercase tracking-wider shadow-lg"
+                                className="inline-flex items-center gap-2 text-xs font-black text-white bg-emerald-600 hover:bg-emerald-700 px-6 py-3.5 rounded-2xl transition-all uppercase tracking-wider shadow-lg shadow-emerald-600/30"
                             >
                                 Explore Routes &rarr;
                             </a>
                         </div>
 
-                        {/* Card 2: Premium Car & Cab Rentals (Vibrant Royal Blue Gradient) */}
-                        <div className="group relative bg-gradient-to-br from-blue-600 via-indigo-600 to-blue-900 border-2 border-blue-400/40 p-8 rounded-[2.5rem] transition-all duration-500 hover:-translate-y-2.5 overflow-hidden shadow-2xl shadow-blue-600/30">
-                            <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-3xl mb-6 shadow-inner border border-white/30 group-hover:scale-110 transition-transform">
+                        {/* Card 2: Premium Car & Cab Rentals (Vibrant Royal Blue Light Card) */}
+                        <div className="group relative bg-blue-50/90 border-2 border-blue-300 hover:border-blue-600 p-8 rounded-[2.5rem] transition-all duration-500 hover:-translate-y-2.5 overflow-hidden shadow-xl shadow-blue-500/10">
+                            <div className="w-16 h-16 rounded-2xl bg-blue-600 flex items-center justify-center text-white text-3xl mb-6 shadow-lg shadow-blue-600/30 group-hover:scale-110 transition-transform">
                                 🚗
                             </div>
-                            <h3 className="text-2xl font-black text-white mb-3 tracking-tight drop-shadow-md">
+                            <h3 className="text-2xl font-black text-blue-950 mb-3 tracking-tight">
                                 Car & Cab Rental Fleet
                             </h3>
-                            <p className="text-blue-50 text-sm font-medium leading-relaxed mb-8 drop-shadow-sm">
+                            <p className="text-blue-900 text-sm font-semibold leading-relaxed mb-8">
                                 Toyota Innova Crysta, Suzuki Ertiga, Swift Dzire & Tempo Travellers available with AC for outstation trips.
                             </p>
                             <a 
                                 href="/cars" 
-                                className="inline-flex items-center gap-2 text-xs font-black text-white bg-white/20 hover:bg-white hover:text-blue-950 px-5 py-3 rounded-xl border border-white/30 transition-all uppercase tracking-wider shadow-lg"
+                                className="inline-flex items-center gap-2 text-xs font-black text-white bg-blue-600 hover:bg-blue-700 px-6 py-3.5 rounded-2xl transition-all uppercase tracking-wider shadow-lg shadow-blue-600/30"
                             >
                                 View Cabs Fleet &rarr;
                             </a>
                         </div>
 
-                        {/* Card 3: Temple & Heritage Tours (Vibrant Amber & Sunset Orange Gradient) */}
-                        <div className="group relative bg-gradient-to-br from-amber-500 via-orange-600 to-amber-900 border-2 border-amber-400/40 p-8 rounded-[2.5rem] transition-all duration-500 hover:-translate-y-2.5 overflow-hidden shadow-2xl shadow-amber-600/30">
-                            <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-3xl mb-6 shadow-inner border border-white/30 group-hover:scale-110 transition-transform">
+                        {/* Card 3: Temple & Heritage Tours (Warm Amber Light Card) */}
+                        <div className="group relative bg-amber-50/90 border-2 border-amber-300 hover:border-amber-600 p-8 rounded-[2.5rem] transition-all duration-500 hover:-translate-y-2.5 overflow-hidden shadow-xl shadow-amber-500/10">
+                            <div className="w-16 h-16 rounded-2xl bg-amber-500 flex items-center justify-center text-white text-3xl mb-6 shadow-lg shadow-amber-500/30 group-hover:scale-110 transition-transform">
                                 🛕
                             </div>
-                            <h3 className="text-2xl font-black text-white mb-3 tracking-tight drop-shadow-md">
+                            <h3 className="text-2xl font-black text-amber-950 mb-3 tracking-tight">
                                 Pilgrimage & Heritage
                             </h3>
-                            <p className="text-amber-50 text-sm font-medium leading-relaxed mb-8 drop-shadow-sm">
+                            <p className="text-amber-900 text-sm font-semibold leading-relaxed mb-8">
                                 Comfortable spiritual journeys to Guruvayur, Palani, Sabarimala & Chottanikara with family packages.
                             </p>
                             <a 
                                 href="/contact" 
-                                className="inline-flex items-center gap-2 text-xs font-black text-white bg-white/20 hover:bg-white hover:text-amber-950 px-5 py-3 rounded-xl border border-white/30 transition-all uppercase tracking-wider shadow-lg"
+                                className="inline-flex items-center gap-2 text-xs font-black text-white bg-amber-600 hover:bg-amber-700 px-6 py-3.5 rounded-2xl transition-all uppercase tracking-wider shadow-lg shadow-amber-600/30"
                             >
                                 Book Pilgrimage &rarr;
                             </a>
                         </div>
 
-                        {/* Card 4: Airport & Outstation Pickup (Vibrant Purple & Fuchsia Gradient) */}
-                        <div className="group relative bg-gradient-to-br from-purple-600 via-fuchsia-600 to-indigo-900 border-2 border-purple-400/40 p-8 rounded-[2.5rem] transition-all duration-500 hover:-translate-y-2.5 overflow-hidden shadow-2xl shadow-purple-600/30">
-                            <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white text-3xl mb-6 shadow-inner border border-white/30 group-hover:scale-110 transition-transform">
+                        {/* Card 4: Airport & Outstation Pickup (Radiant Purple Light Card) */}
+                        <div className="group relative bg-purple-50/90 border-2 border-purple-300 hover:border-purple-600 p-8 rounded-[2.5rem] transition-all duration-500 hover:-translate-y-2.5 overflow-hidden shadow-xl shadow-purple-500/10">
+                            <div className="w-16 h-16 rounded-2xl bg-purple-600 flex items-center justify-center text-white text-3xl mb-6 shadow-lg shadow-purple-600/30 group-hover:scale-110 transition-transform">
                                 ✈️
                             </div>
-                            <h3 className="text-2xl font-black text-white mb-3 tracking-tight drop-shadow-md">
+                            <h3 className="text-2xl font-black text-purple-950 mb-3 tracking-tight">
                                 Airport Transfers 24/7
                             </h3>
-                            <p className="text-purple-50 text-sm font-medium leading-relaxed mb-8 drop-shadow-sm">
+                            <p className="text-purple-900 text-sm font-semibold leading-relaxed mb-8">
                                 Timely airport pickup and drop for Cochin International (COK) & Coimbatore Airport (CJB).
                             </p>
                             <a 
                                 href="/contact" 
-                                className="inline-flex items-center gap-2 text-xs font-black text-white bg-white/20 hover:bg-white hover:text-purple-950 px-5 py-3 rounded-xl border border-white/30 transition-all uppercase tracking-wider shadow-lg"
+                                className="inline-flex items-center gap-2 text-xs font-black text-white bg-purple-600 hover:bg-purple-700 px-6 py-3.5 rounded-2xl transition-all uppercase tracking-wider shadow-lg shadow-purple-600/30"
                             >
                                 Book Airport Taxi &rarr;
                             </a>
                         </div>
                     </div>
 
-                    {/* Popular Routes Pills Bar (Rich High-Contrast Slate & Primary Theme) */}
-                    <div className="bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 border-2 border-primary/40 p-8 md:p-10 rounded-[2.5rem] text-center space-y-6 shadow-2xl">
-                        <p className="text-sm font-black text-primary uppercase tracking-[0.2em] flex items-center justify-center gap-2">
+                    {/* Popular Routes Pills Bar (Bright Light Theme) */}
+                    <div className="bg-slate-50 border-2 border-slate-200 p-8 md:p-10 rounded-[2.5rem] text-center space-y-6 shadow-xl">
+                        <p className="text-sm font-black text-slate-900 uppercase tracking-[0.2em] flex items-center justify-center gap-2">
                             <span>🔥</span> Popular Destinations & Taxi Routes from Nenmara
                         </p>
                         <div className="flex flex-wrap items-center justify-center gap-3">
                             {[
-                                { name: 'Nelliampathy Hills', color: 'from-emerald-500 to-teal-600' },
-                                { name: 'Pothundi Dam', color: 'from-teal-500 to-emerald-600' },
-                                { name: 'Seetharkundu Viewpoint', color: 'from-blue-500 to-indigo-600' },
-                                { name: 'Malampuzha Dam', color: 'from-indigo-500 to-purple-600' },
-                                { name: 'Parambikulam Tiger Reserve', color: 'from-emerald-600 to-green-700' },
-                                { name: 'Cochin Airport Drop', color: 'from-purple-500 to-pink-600' },
-                                { name: 'Guruvayur Temple', color: 'from-amber-500 to-orange-600' },
-                                { name: 'Munnar Backwaters', color: 'from-cyan-500 to-blue-600' }
+                                { name: 'Nelliampathy Hills' },
+                                { name: 'Pothundi Dam' },
+                                { name: 'Seetharkundu Viewpoint' },
+                                { name: 'Malampuzha Dam' },
+                                { name: 'Parambikulam Tiger Reserve' },
+                                { name: 'Cochin Airport Drop' },
+                                { name: 'Guruvayur Temple' },
+                                { name: 'Munnar Backwaters' }
                             ].map((route) => (
                                 <span 
                                     key={route.name} 
-                                    className="px-5 py-3 rounded-2xl bg-white/10 hover:bg-primary border border-white/20 text-white font-bold text-xs tracking-wide shadow-lg hover:shadow-primary/50 transition-all cursor-default flex items-center gap-2"
+                                    className="px-5 py-3 rounded-2xl bg-white hover:bg-primary border-2 border-slate-200 hover:border-primary text-slate-800 hover:text-white font-extrabold text-xs tracking-wide shadow-md transition-all cursor-default flex items-center gap-2"
                                 >
                                     📍 {route.name}
                                 </span>
