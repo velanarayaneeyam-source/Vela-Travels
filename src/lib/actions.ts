@@ -105,12 +105,29 @@ async function saveFile(file: File): Promise<string> {
             const client = supabaseAdmin || supabase;
             console.log("[SAVE_FILE] Client Selection:", !!supabaseAdmin ? "ADMIN (Service Role)" : "PUBLIC (Anon)");
             
-            const { data, error } = await client.storage
+            let { data, error } = await client.storage
                 .from("uploads")
                 .upload(filename, buffer, {
                     contentType: file.type,
                     upsert: true
                 });
+
+            if (error && (error.message?.toLowerCase().includes('not found') || error.message?.toLowerCase().includes('bucket') || (error as any).statusCode === '404' || (error as any).statusCode === 404)) {
+                console.log("[SAVE_FILE] Bucket 'uploads' missing in Supabase. Attempting auto-creation...");
+                try {
+                    await client.storage.createBucket("uploads", { public: true });
+                    const retryResult = await client.storage
+                        .from("uploads")
+                        .upload(filename, buffer, {
+                            contentType: file.type,
+                            upsert: true
+                        });
+                    data = retryResult.data;
+                    error = retryResult.error;
+                } catch (bucketErr) {
+                    console.error("[SAVE_FILE] Bucket creation failed:", bucketErr);
+                }
+            }
 
             if (error) {
                 console.error("[SAVE_FILE] Supabase Storage Error:", error);
