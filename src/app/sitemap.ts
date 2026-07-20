@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { prisma } from '@/lib/db';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://www.gptourstravel.com';
+  const baseUrl = process.env.NEXTAUTH_URL || 'https://vela-travels-kkos-seven.vercel.app';
 
   // Core pages
   const routes = ['', '/about', '/contact', '/tours', '/fleet'].map(

@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/admin/', '/api/'],
     },
-    sitemap: 'https://www.gptourstravel.com/sitemap.xml',
+    sitemap: `${process.env.NEXTAUTH_URL || 'https://vela-travels-kkos-seven.vercel.app'}/sitemap.xml`,
   };
 }
