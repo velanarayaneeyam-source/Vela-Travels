@@ -27,6 +27,7 @@ export const TourCard = ({ tour }: { tour: Tour }) => {
                     src={tour.image}
                     alt={tour.title}
                     fill
+                    unoptimized
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover group-hover:scale-110 transition-transform duration-1000 ease-out"
                     priority={false}
