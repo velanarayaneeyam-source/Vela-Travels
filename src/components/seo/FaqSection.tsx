@@ -62,7 +62,7 @@ export function FaqSection({
   };
 
   return (
-    <section aria-labelledby="faq-heading" className="py-20 px-6 bg-slate-50/50 dark:bg-slate-900/50 rounded-[3rem] my-16 border border-slate-200/60 dark:border-slate-800">
+    <section aria-labelledby="faq-heading" className="py-16 px-8 md:px-12 bg-white dark:bg-slate-900 rounded-[3rem] my-16 border-2 border-slate-200 dark:border-slate-800 shadow-xl">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
