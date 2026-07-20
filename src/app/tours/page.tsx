@@ -123,6 +123,101 @@ export default async function ToursPage({
                     <ToursContent search={search} />
                 </Suspense>
 
+                {/* --- Rich Colorful Variety Section: Tours & Car Rental Showcase --- */}
+                <div className="mt-28 space-y-20">
+                    
+                    {/* Section Header */}
+                    <div className="text-center max-w-3xl mx-auto space-y-4">
+                        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-emerald-500/10 via-primary/10 to-blue-500/10 border border-primary/20 text-primary text-xs font-black uppercase tracking-[0.25em]">
+                            ✨ Variety & Custom Services
+                        </span>
+                        <h2 className="text-3xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-white">
+                            Everything You Need for <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-500 to-blue-600">Kerala Travel</span>
+                        </h2>
+                        <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg">
+                            From scenic hill station getaways to luxury cab rentals with experienced local drivers in Nenmara & Palakkad.
+                        </p>
+                    </div>
+
+                    {/* 4 Feature Cards Grid with Rich Color Accents */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {/* Card 1: Hill Station & Nature Tours */}
+                        <div className="group relative bg-slate-900/60 border border-white/10 hover:border-emerald-500/50 p-8 rounded-[2.5rem] transition-all duration-500 hover:-translate-y-2 overflow-hidden shadow-2xl backdrop-blur-xl">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl group-hover:bg-emerald-500/20 transition-all" />
+                            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center text-white text-2xl mb-6 shadow-lg shadow-emerald-500/20 group-hover:scale-110 transition-transform">
+                                🌲
+                            </div>
+                            <h3 className="text-xl font-bold text-white mb-3">Hill Station & Eco Tours</h3>
+                            <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                                Explore Nelliampathy Hills, Seetharkundu viewpoint, tea estates & Pothundi Dam with expert guidance.
+                            </p>
+                            <a href="/contact" className="inline-flex items-center gap-2 text-xs font-black text-emerald-400 uppercase tracking-widest group-hover:text-emerald-300">
+                                Explore Routes &rarr;
+                            </a>
+                        </div>
+
+                        {/* Card 2: Premium Car & Cab Rentals */}
+                        <div className="group relative bg-slate-900/60 border border-white/10 hover:border-blue-500/50 p-8 rounded-[2.5rem] transition-all duration-500 hover:-translate-y-2 overflow-hidden shadow-2xl backdrop-blur-xl">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl group-hover:bg-blue-500/20 transition-all" />
+                            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-400 to-indigo-600 flex items-center justify-center text-white text-2xl mb-6 shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform">
+                                🚗
+                            </div>
+                            <h3 className="text-xl font-bold text-white mb-3">Car & Cab Rental Fleet</h3>
+                            <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                                Toyota Innova Crysta, Suzuki Ertiga, Swift Dzire & Tempo Travellers available with AC for outstation trips.
+                            </p>
+                            <a href="/cars" className="inline-flex items-center gap-2 text-xs font-black text-blue-400 uppercase tracking-widest group-hover:text-blue-300">
+                                View Cabs Fleet &rarr;
+                            </a>
+                        </div>
+
+                        {/* Card 3: Temple & Heritage Tours */}
+                        <div className="group relative bg-slate-900/60 border border-white/10 hover:border-amber-500/50 p-8 rounded-[2.5rem] transition-all duration-500 hover:-translate-y-2 overflow-hidden shadow-2xl backdrop-blur-xl">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-500/20 transition-all" />
+                            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center text-white text-2xl mb-6 shadow-lg shadow-amber-500/20 group-hover:scale-110 transition-transform">
+                                🛕
+                            </div>
+                            <h3 className="text-xl font-bold text-white mb-3">Pilgrimage & Heritage</h3>
+                            <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                                Comfortable spiritual journeys to Guruvayur, Palani, Sabarimala & Chottanikara with family packages.
+                            </p>
+                            <a href="/contact" className="inline-flex items-center gap-2 text-xs font-black text-amber-400 uppercase tracking-widest group-hover:text-amber-300">
+                                Book Pilgrimage &rarr;
+                            </a>
+                        </div>
+
+                        {/* Card 4: Airport & Outstation Pickup */}
+                        <div className="group relative bg-slate-900/60 border border-white/10 hover:border-purple-500/50 p-8 rounded-[2.5rem] transition-all duration-500 hover:-translate-y-2 overflow-hidden shadow-2xl backdrop-blur-xl">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-3xl group-hover:bg-purple-500/20 transition-all" />
+                            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-400 to-pink-600 flex items-center justify-center text-white text-2xl mb-6 shadow-lg shadow-purple-500/20 group-hover:scale-110 transition-transform">
+                                ✈️
+                            </div>
+                            <h3 className="text-xl font-bold text-white mb-3">Airport Transfers 24/7</h3>
+                            <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                                Timely airport pickup and drop for Cochin International (COK) & Coimbatore Airport (CJB).
+                            </p>
+                            <a href="/contact" className="inline-flex items-center gap-2 text-xs font-black text-purple-400 uppercase tracking-widest group-hover:text-purple-300">
+                                Book Airport Taxi &rarr;
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* Popular Routes Pills Bar */}
+                    <div className="bg-slate-900/40 border border-white/10 p-8 rounded-[2.5rem] text-center space-y-4 backdrop-blur-xl">
+                        <p className="text-xs font-black text-slate-400 uppercase tracking-widest">
+                            🔥 Popular Destinations & Taxi Routes from Nenmara
+                        </p>
+                        <div className="flex flex-wrap items-center justify-center gap-3">
+                            {['Nelliampathy Hills', 'Pothundi Dam', 'Seetharkundu Viewpoint', 'Malampuzha Dam', 'Parambikulam Tiger Reserve', 'Cochin Airport Drop', 'Guruvayur Temple', 'Munnar Backwaters'].map((route) => (
+                                <span key={route} className="px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-slate-300 text-xs font-bold hover:border-primary hover:text-primary transition-all cursor-default">
+                                    📍 {route}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+
+                </div>
+
                 <Suspense fallback={<div className="h-64 animate-pulse bg-slate-100 rounded-[3rem] mt-20" />}>
                     <ContactCTA />
                 </Suspense>
