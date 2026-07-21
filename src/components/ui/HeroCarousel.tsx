@@ -20,7 +20,7 @@ export function HeroCarouselClient({ images, heightClass = "h-[60vh] md:h-[80vh]
 
         const interval = setInterval(() => {
             setCurrentIndex((prev) => (prev + 1) % images.length);
-        }, 5000); // 5 seconds
+        }, 2500); // 2.5 seconds
 
         return () => clearInterval(interval);
     }, [images.length]);
@@ -45,7 +45,7 @@ export function HeroCarouselClient({ images, heightClass = "h-[60vh] md:h-[80vh]
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 0.8, ease: "easeInOut" }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
                     className="absolute inset-0"
                 >
                     {/* Blurred Background to fill empty space */}
