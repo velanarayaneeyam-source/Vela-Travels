@@ -60,8 +60,8 @@ export const HeroSection = ({ settings }: HeroSectionProps) => {
                                     .replace(/Vehicles/gi, '<span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-pink-400 font-black drop-shadow-[0_0_25px_rgba(236,72,153,0.9)]">Vehicles</span>') 
                             }} />
                         ) : (
-                            <>Discover <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-pink-400 font-black drop-shadow-[0_0_25px_rgba(236,72,153,0.9)]">Amazing</span> <br />
-                            Kerala Tours & Vehicles</>
+                            <>Vela Travels <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-pink-400 font-black drop-shadow-[0_0_25px_rgba(236,72,153,0.9)]">Premium Vehicle Rent</span> & Tours</>
                         )}
                     </motion.h1>
 

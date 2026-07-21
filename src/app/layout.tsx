@@ -23,16 +23,17 @@ export const metadata: Metadata = {
   },
   description: "Best Car Rental, Taxi Service & Tour Operator in Nenmara, Aliyur (near NSS College), Palakkad, Kerala. Luxury cars, self-drive rentals, airport transfers & Ayurveda wellness tours.",
   keywords: [
-    "Car Rental Nenmara",
-    "Taxi Service Nenmara Palakkad",
+    "Vela Travels",
+    "Vehicle Rent Kerala",
+    "Car Rent Nenmara",
     "Car Rental Aliyur",
     "Car Rental near NSS College Nemmara",
     "Self Drive Cars Palakkad",
     "Best Tour Operator Nemmara",
-    "Ayurveda Wellness Tours Kerala",
+    "Ayurveda Spa Massage Kerala",
     "Cochin Airport Taxi Nenmara",
     "Coimbatore Airport Taxi Nemmara",
-    "Vela Travels Palakkad"
+    "Premium Vehicle Rentals"
   ],
   authors: [{ name: "Vela Travels" }],
   creator: "Vela Travels",
@@ -79,8 +80,8 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "AutoRental",
-  "name": "Vela Travels",
+  "@type": ["AutoRental", "TravelAgency", "HealthAndBeautyBusiness"],
+  "name": "Vela Travels | Vehicle Rent & Tours",
   "image": `${siteUrl}/og-image.jpg`,
   "@id": `${siteUrl}/#organization`,
   "url": siteUrl,

@@ -14,9 +14,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })
   );
 
-  // Dynamic tour pages
+  // Dynamic pages (Cars and Tours)
   try {
     const tours = await prisma.tour.findMany({
+      select: { id: true, updatedAt: true },
+    });
+
+    const cars = await prisma.car.findMany({
       select: { id: true, updatedAt: true },
     });
 
@@ -27,7 +31,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     }));
 
-    return [...routes, ...tourRoutes];
+    const carRoutes = cars.map((car) => ({
+      url: `${baseUrl}/cars`, // or if there's a dynamic car page: /cars/${car.id}
+      lastModified: car.updatedAt,
+      changeFrequency: 'daily' as const,
+      priority: 0.9,
+    }));
+
+    return [...routes, ...tourRoutes, ...carRoutes];
   } catch (error) {
     return routes;
   }
