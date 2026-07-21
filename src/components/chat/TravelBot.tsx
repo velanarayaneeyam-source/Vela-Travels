@@ -58,11 +58,15 @@ export const TravelBot = ({
         const query = userInput.toLowerCase();
         
         if (query.includes('hi') || query.includes('hello') || query.includes('hey')) {
-            return "Hello! I'm ready to help you with Vela Travels. What kind of vehicle do you need?";
+            return "Hello! I'm ready to help you with Vela Travels. What can I help you discover today?";
         }
         
-        if (query.includes('contact') || query.includes('phone') || query.includes('call') || query.includes('email') || query.includes('info')) {
-            return `You can reach our experts anytime!\n\n📞 Phone: ${activeSettings.phone || 'Contact for info'}\n📧 Email: ${activeSettings.email || 'velanarayaneeyam@gmail.com'}\n📍 Office: ${activeSettings.address || 'Visit our Contact page'}`;
+        if (query.includes('contact') || query.includes('phone') || query.includes('call') || query.includes('email') || query.includes('info') || query.includes('location') || query.includes('address') || query.includes('where')) {
+            return `You can reach our travel experts anytime!\n\n📞 Phone: ${activeSettings.phone || '+91 92070 50525'}\n📧 Email: ${activeSettings.email || 'velatravelsnmra@gmail.com'}\n📍 Office: ${activeSettings.address || 'Aliyur, Near NSS College, Nenmara, Palakkad 678508'}`;
+        }
+
+        if (query.includes('service') || query.includes('offer') || query.includes('ayurveda') || query.includes('massage') || query.includes('what do you do')) {
+            return "We offer a wide range of premium travel services in Kerala:\n\n🚙 Premium Vehicle Rentals (SUVs & Travellers)\n💆‍♀️ Authentic Ayurveda & Spa Retreats\n🏖️ Guided Sightseeing Tours\n⛴️ Premium Houseboat Stays\n\nWhat would you like to explore today?";
         }
 
         if (query.includes('tour') || query.includes('destination') || query.includes('place')) {
@@ -73,19 +77,19 @@ export const TravelBot = ({
             return "We are currently updating our tour packages. Please check back in a few minutes or contact us for custom requests!";
         }
 
-        if (query.includes('fleet') || query.includes('car') || query.includes('vehicle')) {
+        if (query.includes('fleet') || query.includes('car') || query.includes('vehicle') || query.includes('rent')) {
             if (activeCars.length > 0) {
                 const carList = activeCars.slice(0, 3).map(c => `• ${c.name} (${c.details})`).join('\n');
-                return `Our luxury fleet includes:\n\n${carList}\n\nVisit our 'Fleet' page for the full premium selection!`;
+                return `Our luxury fleet includes:\n\n${carList}\n\nVisit our 'Vehicles' page for the full premium selection!`;
             }
-            return "Our luxury fleet includes premium sedans and SUVs for your comfort. Visit our 'Fleet' page for full details!";
+            return "Our luxury fleet includes premium sedans and SUVs like the Innova Crysta and Force Traveller. Visit our 'Vehicles' page for full details!";
         }
 
-        if (query.includes('price') || query.includes('cost') || query.includes('money')) {
-            return "Our premium tours are competitively priced to offer maximum value. I can give you more details on any specific tour or car from our list!";
+        if (query.includes('price') || query.includes('cost') || query.includes('money') || query.includes('charge')) {
+            return "Our premium services are competitively priced to offer maximum value. Prices vary based on the vehicle or tour package. Please contact us directly at +91 92070 50525 for a quick custom quote!";
         }
 
-        return "I'm not sure I understand that yet, but our human team definitely will! Would you like our contact info instead?";
+        return "I'm still learning, but our human team knows everything! Would you like our phone number or office address so we can chat directly?";
     };
 
     const handleSend = (text: string) => {
