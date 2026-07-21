@@ -52,7 +52,7 @@ export const HotelHeroCarousel = () => {
     };
 
     return (
-        <section className="relative w-full h-[85vh] md:h-[95vh] overflow-hidden bg-slate-900">
+        <section className="relative w-full h-[60vh] md:h-[95vh] overflow-hidden bg-slate-900">
             <AnimatePresence mode="wait">
                 <motion.div
                     key={currentIndex}
@@ -62,11 +62,21 @@ export const HotelHeroCarousel = () => {
                     transition={{ duration: 0.4, ease: "easeInOut" }}
                     className="absolute inset-0"
                 >
+                    {/* Blurred Background to fill empty space on mobile */}
+                    <Image
+                        src={slides[currentIndex].image}
+                        alt="Background"
+                        fill
+                        className="object-cover blur-2xl opacity-40 scale-110 md:hidden"
+                        priority
+                    />
+                    
+                    {/* Main image */}
                     <Image
                         src={slides[currentIndex].image}
                         alt={slides[currentIndex].title}
                         fill
-                        className="object-cover"
+                        className="object-contain md:object-cover"
                         priority
                     />
                     {/* Gradient Overlay for better text readability */}
