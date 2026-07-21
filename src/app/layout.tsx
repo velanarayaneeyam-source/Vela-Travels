@@ -128,7 +128,7 @@ export default function RootLayout({
       <head>
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#f97316" />
-        <meta name="google-site-verification" content="wjcDMXNI74xDU2PI5VUWWRo3gUqneGdtI6s0ftNGc2U" />
+        <meta name="google-site-verification" content="f52j6_XzU-9ZJN_Ys1nLLqK6SVw-VYDV-EF9mzO0boI" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
