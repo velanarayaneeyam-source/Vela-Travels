@@ -112,10 +112,10 @@ export const SettingsForm = ({ initialSettings }: { initialSettings: Record<stri
             title: "Contact Information",
             icon: Phone,
             fields: [
-                { key: "phone", label: "Phone Number", type: "text", icon: Phone },
-                { key: "whatsapp", label: "WhatsApp Number (Direct Link)", type: "text", icon: MessageCircle },
-                { key: "email", label: "Email Address", type: "email", icon: Mail },
-                { key: "address", label: "Office Address", type: "textarea", icon: MapPin },
+                { key: "phone", label: "Phone Number", type: "text", icon: Phone, placeholder: "+91 92070 50525" },
+                { key: "whatsapp", label: "WhatsApp Number (Direct Link)", type: "text", icon: MessageCircle, placeholder: "919207050525" },
+                { key: "email", label: "Email Address", type: "email", icon: Mail, placeholder: "velatravelsnmra@gmail.com" },
+                { key: "address", label: "Office Address", type: "textarea", icon: MapPin, placeholder: "Aliyur, Near NSS College, Nenmara, Palakkad 678508" },
             ]
         },
         {
@@ -123,8 +123,8 @@ export const SettingsForm = ({ initialSettings }: { initialSettings: Record<stri
             icon: Type,
             fields: [
                 { key: "heroImage", label: "Hero Background Image", type: "image", icon: ImageIcon },
-                { key: "heroTitle", label: "Hero Title", type: "text", icon: Type },
-                { key: "heroSubtitle", label: "Hero Subtitle", type: "textarea", icon: Type },
+                { key: "heroTitle", label: "Hero Title", type: "text", icon: Type, placeholder: "Vela Travels | Premium Vehicle Rent & Tours" },
+                { key: "heroSubtitle", label: "Hero Subtitle", type: "textarea", icon: Type, placeholder: "Travel together in comfort and style. Whether it's a family getaway, corporate trip, or group tour, we provide the perfect vehicles for your journey." },
             ]
         },
 
@@ -140,25 +140,25 @@ export const SettingsForm = ({ initialSettings }: { initialSettings: Record<stri
             title: "Footer Content",
             icon: Type,
             fields: [
-                { key: "footerTagline", label: "Footer Tagline / Description", type: "textarea", icon: Type },
-                { key: "footerDestinations", label: "Destinations (comma separated)", type: "textarea", icon: MapPin },
-                { key: "footerCopyright", label: "Copyright Text", type: "text", icon: Type },
+                { key: "footerTagline", label: "Footer Tagline / Description", type: "textarea", icon: Type, placeholder: "Connecting you to the most beautiful destinations around the world. Your trusted travel partner since 2015." },
+                { key: "footerDestinations", label: "Destinations (comma separated)", type: "textarea", icon: MapPin, placeholder: "Premium Rentals, Ayurveda Retreats, Sightseeing Tours, Houseboat Stays" },
+                { key: "footerCopyright", label: "Copyright Text", type: "text", icon: Type, placeholder: "© 2026 Vela Travels. All rights reserved." },
             ]
         },
         {
             title: "Social Media Links",
             icon: MessageCircle,
             fields: [
-                { key: "socialInstagram", label: "Instagram URL", type: "text", icon: MessageCircle },
-                { key: "socialFacebook", label: "Facebook URL", type: "text", icon: MessageCircle },
-                { key: "socialTwitter", label: "Twitter / X URL", type: "text", icon: MessageCircle },
+                { key: "socialInstagram", label: "Instagram URL", type: "text", icon: MessageCircle, placeholder: "https://instagram.com/velatravels" },
+                { key: "socialFacebook", label: "Facebook URL", type: "text", icon: MessageCircle, placeholder: "https://facebook.com/velatravels" },
+                { key: "socialTwitter", label: "Twitter / X URL", type: "text", icon: MessageCircle, placeholder: "https://twitter.com/velatravels" },
             ]
         },
         {
             title: "Map Integration",
             icon: MapPin,
             fields: [
-                { key: "googleMapsEmbed", label: "Google Maps Embed URL", type: "textarea", icon: MapPin },
+                { key: "googleMapsEmbed", label: "Google Maps Embed URL", type: "textarea", icon: MapPin, placeholder: "https://www.google.com/maps/embed?..." },
             ]
         }
     ];
@@ -246,9 +246,10 @@ export const SettingsForm = ({ initialSettings }: { initialSettings: Record<stri
                                         {field.type === 'textarea' ? (
                                             <textarea
                                                 name={field.key}
-                                                className="w-full bg-slate-950/50 border border-white/5 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-primary transition-all min-h-[100px]"
+                                                className="w-full bg-slate-950/50 border border-white/5 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-primary transition-all min-h-[100px] placeholder:text-slate-600"
                                                 value={settings[field.key] || ""}
                                                 onChange={(e) => handleChange(field.key, e.target.value)}
+                                                placeholder={field.placeholder}
                                             />
                                         ) : field.type === 'image' && field.key === 'heroImage' ? (
                                             <div className="pl-12 pr-4 pb-4">
@@ -387,9 +388,10 @@ export const SettingsForm = ({ initialSettings }: { initialSettings: Record<stri
                                             <input
                                                 name={field.key}
                                                 type={field.type}
-                                                className="w-full bg-slate-950/50 border border-white/5 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-primary transition-all"
+                                                className="w-full bg-slate-950/50 border border-white/5 rounded-2xl py-4 pl-12 pr-4 text-white focus:outline-none focus:border-primary transition-all placeholder:text-slate-600"
                                                 value={settings[field.key] || ""}
                                                 onChange={(e) => handleChange(field.key, e.target.value)}
+                                                placeholder={field.placeholder}
                                             />
                                         )}
                                     </div>
