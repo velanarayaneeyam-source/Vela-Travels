@@ -14,12 +14,14 @@ import {
     Star,
     Menu,
     X,
+    Image as ImageIcon,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { LogoutButton } from '@/components/ui/LogoutButton';
 
 const ADMIN_LINKS = [
     { name: 'Dashboard', href: '/veela-travels-2026', icon: LayoutDashboard },
+
     { name: 'Manage Tours', href: '/veela-travels-2026/tours', icon: MapPin },
     { name: 'Manage Cars', href: '/veela-travels-2026/cars', icon: Car },
     { name: 'Customer Inquiries', href: '/veela-travels-2026/inquiries', icon: MessageSquare },

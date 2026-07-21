@@ -5,8 +5,8 @@ import { Lock, Loader2, CheckCircle2, AlertCircle } from 'lucide-react';
 import { resetPassword } from '@/lib/actions';
 import { Button } from '@/components/ui/Button';
 
-export default function ResetPasswordPage({ params }: { params: Promise<{ token: string }> }) {
-    const { token } = use(params);
+export default function ResetPasswordPage({ params }: { params: { token: string } }) {
+    const { token } = params;
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState<string | null>(null);

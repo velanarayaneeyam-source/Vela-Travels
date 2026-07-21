@@ -106,11 +106,7 @@ export const AyurvedicTreatments = () => {
                                     {treatment.desc}
                                 </p>
                                 
-                                <div className="pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-between items-end mt-auto">
-                                <div>
-                                    <span className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Starts From</span>
-                                    <span className="font-bold text-lg text-teal-600 dark:text-teal-400">{treatment.price}</span>
-                                </div>
+                                <div className="pt-4 border-t border-slate-100 dark:border-slate-700 flex justify-end items-end mt-auto">
                                 <div className="text-right">
                                     <span className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Duration</span>
                                     <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">{treatment.duration}</span>

@@ -9,8 +9,16 @@ import { CONTACT_INFO } from '@/lib/data';
 import { CarCardSkeleton } from '@/components/ui/Skeletons';
 import { FaqSection } from '@/components/seo/FaqSection';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
+import { HeroCarouselClient } from "@/components/ui/HeroCarousel";
 
 export const revalidate = 3600;
+
+async function HeroCarouselWrapper() {
+    const images = await prisma.carouselImage.findMany({
+        orderBy: [{ order: 'asc' }, { createdAt: 'desc' }]
+    });
+    return <HeroCarouselClient images={images} containerClass="max-w-[95vw] lg:max-w-[1400px] mx-auto rounded-3xl md:rounded-[3rem]" />;
+}
 
 async function CarsContent({ search }: { search?: string }) {
     const [cars, settings] = await Promise.all([
@@ -88,8 +96,12 @@ export default async function CarsPage({
     const { search } = await searchParams;
 
     return (
-        <main className="min-h-screen pt-48 pb-24 px-6 bg-[#020617]">
-            <div className="max-w-7xl mx-auto">
+        <main className="min-h-screen pt-32 bg-[#020617] overflow-hidden">
+            <Suspense fallback={<div className="w-full h-[60vh] bg-slate-900 animate-pulse" />}>
+                <HeroCarouselWrapper />
+            </Suspense>
+
+            <div className="pt-24 pb-24 px-6 max-w-7xl mx-auto">
                 <div className="relative mb-20">
                     <div className="absolute -top-24 -left-24 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
                     <div className="absolute -top-12 -right-12 w-64 h-64 bg-blue-500/5 rounded-full blur-[80px] pointer-events-none" />

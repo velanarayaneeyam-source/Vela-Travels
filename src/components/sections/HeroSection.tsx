@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ArrowRight, Plane, Users, MapPin, Globe, Star, Car } from 'lucide-react';
+import { ArrowRight, Plane, Users, MapPin, Globe, Star, Car, MessageCircle, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { CONTACT_INFO } from '@/lib/data';
 
@@ -88,6 +88,28 @@ export const HeroSection = ({ settings }: HeroSectionProps) => {
                             Rent a Vehicle
                             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </Button>
+
+                        <motion.a
+                            href={`https://wa.me/${CONTACT_INFO.whatsapp}?text=Hi, I would like to inquire about renting a vehicle.`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="w-full sm:w-auto px-8 py-3 rounded-full flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold hover:bg-[#128C7E] transition-colors shadow-[0_0_15px_rgba(37,211,102,0.5)]"
+                        >
+                            <MessageCircle className="w-5 h-5 animate-pulse" />
+                            WhatsApp Us
+                        </motion.a>
+
+                        <motion.a
+                            href={`tel:${CONTACT_INFO.phone}`}
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="w-full sm:w-auto px-8 py-3 rounded-full flex items-center justify-center gap-2 bg-blue-600 text-white font-bold hover:bg-blue-700 transition-colors shadow-[0_0_15px_rgba(37,99,235,0.5)]"
+                        >
+                            <Phone className="w-5 h-5 animate-bounce" />
+                            Call Now
+                        </motion.a>
                     </motion.div>
                 </div>
 

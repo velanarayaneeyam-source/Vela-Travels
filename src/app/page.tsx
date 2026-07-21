@@ -11,8 +11,16 @@ import { AyurvedicTreatments } from "@/components/sections/AyurvedicTreatments";
 import { prisma } from "@/lib/db";
 import { getSiteSettings, getTestimonials } from "@/lib/settings";
 import { SectionSkeleton } from "@/components/ui/Skeletons";
+import { HeroCarouselClient } from "@/components/ui/HeroCarousel";
 
 export const revalidate = 0; // Disable cache to show fresh content instantly
+
+async function HeroCarouselWrapper() {
+    const images = await prisma.carouselImage.findMany({
+        orderBy: [{ order: 'asc' }, { createdAt: 'desc' }]
+    });
+    return <HeroCarouselClient images={images} />;
+}
 
 async function FeaturedToursData() {
     const tours = await prisma.tour.findMany({
@@ -24,7 +32,10 @@ async function FeaturedToursData() {
 
 async function VehicleRentalsWrapper() {
     const settings = await getSiteSettings();
-    return <VehicleRentals settings={settings} />;
+    const cars = await prisma.car.findMany({
+        orderBy: { createdAt: 'asc' }
+    });
+    return <VehicleRentals cars={cars} settings={settings} />;
 }
 
 async function TestimonialsData() {
@@ -53,9 +64,9 @@ export default function Home() {
         <VehicleRentalsWrapper />
       </Suspense>
 
-      <SpaAndWellness />
 
-      <AyurvedicTreatments />
+
+      <SpaAndWellness />
 
       <WhyChooseUs />
 

@@ -14,9 +14,9 @@ import { TravelBot } from '@/components/chat/TravelBot';
 
 const NAV_LINKS = [
     { name: 'Home', href: '/' },
-    { name: 'Tours', href: '/tours' },
-    { name: 'Fleet', href: '/cars' },
-    { name: 'Ayurveda', href: '/ayurveda' },
+    { name: 'Vehicles', href: '/cars' },
+    { name: 'Spa, Massage & Hotel', href: '/ayurveda' },
+    { name: 'Tour', href: '/tours' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
 ];
@@ -155,7 +155,7 @@ export const NavbarClient = ({
             {/* Mobile Nav Overlay */}
             {isOpen && (
                 <div
-                    className="fixed inset-0 bg-white dark:bg-slate-950 z-[1000] md:hidden transition-all duration-500 ease-in-out px-6 py-8 flex flex-col items-center gpu-boost animate-in fade-in slide-in-from-top-6 duration-500"
+                    className="fixed inset-0 bg-white dark:bg-slate-950 z-[1000] md:hidden transition-all duration-500 ease-in-out px-6 py-8 flex flex-col items-center gpu-boost animate-in fade-in slide-in-from-top-6 duration-500 overflow-y-auto"
                 >
                     {/* Mobile Header Inside Overlay */}
                     <div className="w-full flex items-center justify-between mb-12 relative z-[1010]">

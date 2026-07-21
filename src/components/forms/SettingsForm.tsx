@@ -3,7 +3,7 @@
 import React, { useState, useRef } from 'react';
 import { Button } from '@/components/ui/Button';
 import { saveSiteSettings } from '@/lib/actions';
-import { Save, Phone, Mail, MapPin, Type, MessageCircle, Upload, Image as ImageIcon, Car } from 'lucide-react';
+import { Save, Phone, Mail, MapPin, Type, MessageCircle, Upload, Image as ImageIcon, Car, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export const SettingsForm = ({ initialSettings }: { initialSettings: Record<string, string> }) => {
@@ -14,6 +14,8 @@ export const SettingsForm = ({ initialSettings }: { initialSettings: Record<stri
     const [heroPreviewUrl, setHeroPreviewUrl] = useState(initialSettings.heroImageUrl || "/hero-traveller.png");
     const [homeVehicle1PreviewUrl, setHomeVehicle1PreviewUrl] = useState(initialSettings.homeVehicle1Image || "/premium-car.png");
     const [homeVehicle2PreviewUrl, setHomeVehicle2PreviewUrl] = useState(initialSettings.homeVehicle2Image || "/hero-traveller.png");
+    const [v1Gallery, setV1Gallery] = useState<string[]>(initialSettings.homeVehicle1Gallery ? initialSettings.homeVehicle1Gallery.split(',') : []);
+    const [v2Gallery, setV2Gallery] = useState<string[]>(initialSettings.homeVehicle2Gallery ? initialSettings.homeVehicle2Gallery.split(',') : []);
     const fileInputRef = useRef<HTMLInputElement>(null);
     const heroFileInputRef = useRef<HTMLInputElement>(null);
     const homeVehicle1FileInputRef = useRef<HTMLInputElement>(null);
@@ -125,6 +127,7 @@ export const SettingsForm = ({ initialSettings }: { initialSettings: Record<stri
                 { key: "heroSubtitle", label: "Hero Subtitle", type: "textarea", icon: Type },
             ]
         },
+
         {
             title: "Homepage Featured Vehicles",
             icon: Car,
@@ -272,6 +275,8 @@ export const SettingsForm = ({ initialSettings }: { initialSettings: Record<stri
                                                     />
                                                 </div>
                                             </div>
+
+
                                         ) : field.type === 'image' && field.key === 'homeVehicle1Image' ? (
                                             <div className="pl-12 pr-4 pb-4">
                                                 <div className="relative aspect-video rounded-xl overflow-hidden bg-slate-950/50 border border-white/5 flex items-center justify-center p-2 group mb-4">
@@ -295,6 +300,34 @@ export const SettingsForm = ({ initialSettings }: { initialSettings: Record<stri
                                                         className="hidden" 
                                                         onChange={handleHomeVehicle1FileChange}
                                                     />
+                                                </div>
+                                                <div className="mt-4">
+                                                    <label className="text-xs font-bold text-slate-400 mb-2 block">Upload Multiple Gallery Images</label>
+                                                    <input 
+                                                        type="file" 
+                                                        name="home-vehicle-1-gallery"
+                                                        accept="image/*"
+                                                        multiple
+                                                        className="w-full text-sm text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-bold file:bg-primary/20 file:text-primary hover:file:bg-primary/30"
+                                                    />
+                                                    <input type="hidden" name="home-vehicle-1-gallery-url" value={v1Gallery.join(',')} />
+                                                    
+                                                    {v1Gallery.length > 0 && (
+                                                        <div className="mt-3 flex flex-wrap gap-2">
+                                                            {v1Gallery.map((url, idx) => (
+                                                                <div key={idx} className="relative group w-20 h-16 rounded-lg overflow-hidden border border-white/10">
+                                                                    <img src={url} alt="Gallery" className="w-full h-full object-cover" />
+                                                                    <button 
+                                                                        type="button" 
+                                                                        onClick={() => setV1Gallery(prev => prev.filter((_, i) => i !== idx))}
+                                                                        className="absolute top-1 right-1 bg-red-500 hover:bg-red-600 rounded-full p-1 shadow-lg transition-colors"
+                                                                    >
+                                                                        <X className="w-3 h-3 text-white" />
+                                                                    </button>
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    )}
                                                 </div>
                                             </div>
                                         ) : field.type === 'image' && field.key === 'homeVehicle2Image' ? (
@@ -320,6 +353,34 @@ export const SettingsForm = ({ initialSettings }: { initialSettings: Record<stri
                                                         className="hidden" 
                                                         onChange={handleHomeVehicle2FileChange}
                                                     />
+                                                </div>
+                                                <div className="mt-4">
+                                                    <label className="text-xs font-bold text-slate-400 mb-2 block">Upload Multiple Gallery Images</label>
+                                                    <input 
+                                                        type="file" 
+                                                        name="home-vehicle-2-gallery"
+                                                        accept="image/*"
+                                                        multiple
+                                                        className="w-full text-sm text-slate-400 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-bold file:bg-primary/20 file:text-primary hover:file:bg-primary/30"
+                                                    />
+                                                    <input type="hidden" name="home-vehicle-2-gallery-url" value={v2Gallery.join(',')} />
+                                                    
+                                                    {v2Gallery.length > 0 && (
+                                                        <div className="mt-3 flex flex-wrap gap-2">
+                                                            {v2Gallery.map((url, idx) => (
+                                                                <div key={idx} className="relative group w-20 h-16 rounded-lg overflow-hidden border border-white/10">
+                                                                    <img src={url} alt="Gallery" className="w-full h-full object-cover" />
+                                                                    <button 
+                                                                        type="button" 
+                                                                        onClick={() => setV2Gallery(prev => prev.filter((_, i) => i !== idx))}
+                                                                        className="absolute top-1 right-1 bg-red-500 hover:bg-red-600 rounded-full p-1 shadow-lg transition-colors"
+                                                                    >
+                                                                        <X className="w-3 h-3 text-white" />
+                                                                    </button>
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    )}
                                                 </div>
                                             </div>
                                         ) : (

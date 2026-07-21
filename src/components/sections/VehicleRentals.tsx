@@ -14,12 +14,24 @@ export interface Vehicle {
     images: { src: string; alt: string }[];
 }
 
+interface Car {
+    id: string;
+    name: string;
+    image: string;
+    images: string[];
+    details: string;
+}
+
 interface VehicleRentalsProps {
+    cars: Car[];
     settings: Record<string, string>;
 }
 
-export const VehicleRentals = ({ settings }: VehicleRentalsProps) => {
-    const vehicles: Vehicle[] = [
+export const VehicleRentals = ({ cars, settings }: VehicleRentalsProps) => {
+    const vehicle1Gallery = settings.homeVehicle1Gallery ? settings.homeVehicle1Gallery.split(',').map(src => ({ src, alt: 'Gallery Image' })) : [];
+    const vehicle2Gallery = settings.homeVehicle2Gallery ? settings.homeVehicle2Gallery.split(',').map(src => ({ src, alt: 'Gallery Image' })) : [];
+
+    const staticVehicles: Vehicle[] = [
         {
             id: 'suv',
             name: 'Premium SUV',
@@ -27,8 +39,11 @@ export const VehicleRentals = ({ settings }: VehicleRentalsProps) => {
             thumb: settings.homeVehicle1Image || '/premium-car.png',
             images: [
                 { src: settings.homeVehicle1Image || '/premium-car.png', alt: 'Exterior View' },
-                { src: '/suv-interior-front.png', alt: 'Front Interior & Dashboard' },
-                { src: '/suv-interior-rear.png', alt: 'Rear Seating & Sunroof' }
+                ...vehicle1Gallery,
+                ...(vehicle1Gallery.length === 0 ? [
+                    { src: '/suv-interior-front.png', alt: 'Front Interior & Dashboard' },
+                    { src: '/suv-interior-rear.png', alt: 'Rear Seating & Sunroof' }
+                ] : [])
             ]
         },
         {
@@ -38,10 +53,26 @@ export const VehicleRentals = ({ settings }: VehicleRentalsProps) => {
             thumb: settings.homeVehicle2Image || '/hero-traveller.png',
             images: [
                 { src: settings.homeVehicle2Image || '/hero-traveller.png', alt: 'Exterior View' },
-                { src: '/traveller-interior.png', alt: 'Spacious Interior' }
+                ...vehicle2Gallery,
+                ...(vehicle2Gallery.length === 0 ? [
+                    { src: '/traveller-interior.png', alt: 'Spacious Interior' }
+                ] : [])
             ]
         }
     ];
+
+    const dynamicVehicles: Vehicle[] = cars.map(car => ({
+        id: car.id,
+        name: car.name,
+        desc: car.details,
+        thumb: car.image || '/premium-car.png',
+        images: [
+            { src: car.image || '/premium-car.png', alt: 'Exterior View' },
+            ...car.images.map(img => ({ src: img, alt: 'Gallery Image' }))
+        ]
+    }));
+
+    const vehicles = [...staticVehicles, ...dynamicVehicles];
 
     const [activeVehicle, setActiveVehicle] = useState<Vehicle | null>(null);
     const [activeImageIdx, setActiveImageIdx] = useState(0);
@@ -130,7 +161,7 @@ export const VehicleRentals = ({ settings }: VehicleRentalsProps) => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex flex-col"
+                        className="fixed inset-0 z-[1000] bg-black/95 backdrop-blur-xl flex flex-col"
                     >
                         {/* Header */}
                         <div className="p-6 flex justify-between items-center bg-gradient-to-b from-black/80 to-transparent absolute top-0 left-0 right-0 z-10">

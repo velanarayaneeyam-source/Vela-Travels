@@ -32,6 +32,7 @@ export default function CarForm({ car }: CarFormProps) {
 
     const [previewUrl, setPreviewUrl] = useState(car?.image || "");
     const [filePreview, setFilePreview] = useState<string | null>(null);
+    const [galleryImages, setGalleryImages] = useState<string[]>(car?.images || []);
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files?.[0];
@@ -130,7 +131,6 @@ export default function CarForm({ car }: CarFormProps) {
                                     defaultValue={car?.name}
                                     placeholder="e.g. Toyota Land Cruiser"
                                     className="w-full px-5 py-4 bg-slate-950/50 border border-white/10 rounded-2xl text-white outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-                                    required
                                 />
                             </div>
 
@@ -142,7 +142,6 @@ export default function CarForm({ car }: CarFormProps) {
                                     defaultValue={car?.details}
                                     placeholder="Describe the vehicle, its features, seating capacity..."
                                     className="w-full px-5 py-4 bg-slate-950/50 border border-white/10 rounded-2xl text-white outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none"
-                                    required
                                 />
                             </div>
 
@@ -161,15 +160,59 @@ export default function CarForm({ car }: CarFormProps) {
                                 <p className="text-[10px] text-slate-500 mt-1">Leave this empty if you want to provide personalized quotes.</p>
                             </div>
 
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div className="space-y-2">
+                                    <label className="text-sm font-bold text-slate-400 uppercase tracking-tighter">Transmission</label>
+                                    <input
+                                        name="transmission"
+                                        type="text"
+                                        defaultValue={car?.transmission || 'Automatic'}
+                                        placeholder="e.g. Automatic"
+                                        className="w-full px-5 py-4 bg-slate-950/50 border border-white/10 rounded-2xl text-white outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+                                    />
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-sm font-bold text-slate-400 uppercase tracking-tighter">Seats</label>
+                                    <input
+                                        name="seats"
+                                        type="text"
+                                        defaultValue={car?.seats || '5 Seats'}
+                                        placeholder="e.g. 5 Seats"
+                                        className="w-full px-5 py-4 bg-slate-950/50 border border-white/10 rounded-2xl text-white outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+                                    />
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-sm font-bold text-slate-400 uppercase tracking-tighter">A/C Type</label>
+                                    <input
+                                        name="ac"
+                                        type="text"
+                                        defaultValue={car?.ac || 'Dual A/C'}
+                                        placeholder="e.g. Dual A/C"
+                                        className="w-full px-5 py-4 bg-slate-950/50 border border-white/10 rounded-2xl text-white outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+                                    />
+                                </div>
+                            </div>
+
                             <div className="space-y-2">
                                 <label className="text-sm font-bold text-slate-400 uppercase tracking-tighter">Gallery Images (Optional)</label>
-                                <textarea
-                                    name="gallery-images"
-                                    rows={3}
-                                    defaultValue={car?.images?.join(", ")}
-                                    placeholder="Paste comma-separated image URLs here..."
-                                    className="w-full px-5 py-4 bg-slate-950/50 border border-white/10 rounded-2xl text-white outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none font-mono text-xs"
-                                />
+                                {galleryImages.length > 0 && (
+                                    <div className="grid grid-cols-4 sm:grid-cols-6 gap-3 mb-3 bg-slate-950/30 p-3 rounded-2xl border border-white/5">
+                                        {galleryImages.map((img, idx) => (
+                                            <div key={idx} className="relative aspect-square rounded-xl overflow-hidden group border border-white/10 shadow-lg">
+                                                <img src={img} alt={`Gallery image ${idx + 1}`} className="w-full h-full object-cover" />
+                                                <button
+                                                    type="button"
+                                                    onClick={() => setGalleryImages(prev => prev.filter((_, i) => i !== idx))}
+                                                    className="absolute top-1 right-1 bg-red-600/90 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-all hover:bg-red-500 hover:scale-110 shadow-md backdrop-blur-sm"
+                                                    title="Remove Image"
+                                                >
+                                                    <X className="w-3 h-3" />
+                                                </button>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                                <input type="hidden" name="gallery-images" value={galleryImages.join(',')} />
                                 <p className="text-[10px] text-slate-500 mt-1 mb-3">These will appear in the image gallery when a user clicks the main vehicle image.</p>
                                 
                                 <label className="text-sm font-bold text-slate-400 uppercase tracking-tighter">Or Upload Image Files</label>

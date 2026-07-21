@@ -105,15 +105,15 @@ export const CarCard = ({ car, settings }: CarCardProps) => {
                         </h3>
                     </div>
 
-                    <div className="flex flex-wrap gap-2 mb-6">
-                        <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300 font-medium shadow-inner">
-                            <Settings2 className="w-3.5 h-3.5 text-primary" /> Automatic
+                    <div className="flex flex-wrap gap-1.5 mb-6">
+                        <span className="flex items-center gap-1 px-2 py-1.5 rounded-lg bg-white/5 border border-white/10 text-[11px] text-slate-300 font-medium shadow-inner">
+                            <Settings2 className="w-3 h-3 text-primary" /> {car.transmission || "Automatic"}
                         </span>
-                        <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300 font-medium shadow-inner">
-                            <Users className="w-3.5 h-3.5 text-primary" /> {car.name.toLowerCase().includes('traveller') || car.name.toLowerCase().includes('van') ? '12-14' : car.name.toLowerCase().includes('cruiser') || car.name.toLowerCase().includes('suv') ? '7' : '5'} Seats
+                        <span className="flex items-center gap-1 px-2 py-1.5 rounded-lg bg-white/5 border border-white/10 text-[11px] text-slate-300 font-medium shadow-inner">
+                            <Users className="w-3 h-3 text-primary" /> {car.seats || "5 Seats"}
                         </span>
-                        <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-300 font-medium shadow-inner">
-                            <Wind className="w-3.5 h-3.5 text-primary" /> Dual A/C
+                        <span className="flex items-center gap-1 px-2 py-1.5 rounded-lg bg-white/5 border border-white/10 text-[11px] text-slate-300 font-medium shadow-inner">
+                            <Wind className="w-3 h-3 text-primary" /> {car.ac || "Dual A/C"}
                         </span>
                     </div>
 

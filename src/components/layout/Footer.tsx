@@ -107,9 +107,20 @@ export const Footer = async () => {
             </div>
 
             <div className="max-w-7xl mx-auto pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
-                <p>{copyright}</p>
+                <p className="flex items-center">
+                    {copyright.includes('©') ? (
+                        <>
+                            <Link href="/veela-travels-2026" className="hover:text-primary transition-colors cursor-default" title="">©</Link>
+                            {copyright.split('©')[1]}
+                        </>
+                    ) : (
+                        <>
+                            <Link href="/veela-travels-2026" className="hover:text-primary transition-colors cursor-default opacity-0" title="">_</Link>
+                            {copyright}
+                        </>
+                    )}
+                </p>
                 <div className="flex gap-6 items-center">
-                    <Link href="/login" className="text-slate-600 hover:text-primary transition-colors">Admin Login</Link>
                     <a href="#" className="hover:text-white">Privacy Policy</a>
                     <a href="#" className="hover:text-white">Terms of Service</a>
                 </div>

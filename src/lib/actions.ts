@@ -45,9 +45,12 @@ function isRedirect(error: any) {
 }
 
 const CarSchema = z.object({
-    name: z.string().min(2, "Car name is required"),
+    name: z.string().default("Unnamed Vehicle"),
     details: z.string().default(""),
     hourlyPrice: z.string().optional().nullable(),
+    transmission: z.string().default("Automatic"),
+    seats: z.string().default("5 Seats"),
+    ac: z.string().default("Dual A/C"),
 });
 
 // --- Helper Functions ---
@@ -368,6 +371,20 @@ export async function saveSiteSettings(formData: FormData) {
             homeVehicle2Image = await saveFile(homeVehicle2File);
         }
 
+        const homeVehicle1GalleryFiles = formData.getAll("home-vehicle-1-gallery").filter(f => (f as File).size > 0) as File[];
+        let homeVehicle1GalleryStr = formData.get("home-vehicle-1-gallery-url") as string || "";
+        if (homeVehicle1GalleryFiles.length > 0) {
+            const uploadedUrls = await Promise.all(homeVehicle1GalleryFiles.map(f => saveFile(f)));
+            homeVehicle1GalleryStr = homeVehicle1GalleryStr ? `${homeVehicle1GalleryStr},${uploadedUrls.join(',')}` : uploadedUrls.join(',');
+        }
+
+        const homeVehicle2GalleryFiles = formData.getAll("home-vehicle-2-gallery").filter(f => (f as File).size > 0) as File[];
+        let homeVehicle2GalleryStr = formData.get("home-vehicle-2-gallery-url") as string || "";
+        if (homeVehicle2GalleryFiles.length > 0) {
+            const uploadedUrls = await Promise.all(homeVehicle2GalleryFiles.map(f => saveFile(f)));
+            homeVehicle2GalleryStr = homeVehicle2GalleryStr ? `${homeVehicle2GalleryStr},${uploadedUrls.join(',')}` : uploadedUrls.join(',');
+        }
+
         const settings: Record<string, string> = {};
         for (let [key, value] of formData.entries()) {
             if (
@@ -375,6 +392,8 @@ export async function saveSiteSettings(formData: FormData) {
                 key !== "hero-file" && key !== "hero-url" && 
                 key !== "home-vehicle-1-file" && key !== "home-vehicle-1-url" && 
                 key !== "home-vehicle-2-file" && key !== "home-vehicle-2-url" && 
+                key !== "home-vehicle-1-gallery" && key !== "home-vehicle-1-gallery-url" && 
+                key !== "home-vehicle-2-gallery" && key !== "home-vehicle-2-gallery-url" && 
                 typeof value === 'string'
             ) {
                 settings[key] = value;
@@ -385,6 +404,8 @@ export async function saveSiteSettings(formData: FormData) {
         if (heroImageUrl) settings["heroImageUrl"] = heroImageUrl;
         if (homeVehicle1Image) settings["homeVehicle1Image"] = homeVehicle1Image;
         if (homeVehicle2Image) settings["homeVehicle2Image"] = homeVehicle2Image;
+        settings["homeVehicle1Gallery"] = homeVehicle1GalleryStr;
+        settings["homeVehicle2Gallery"] = homeVehicle2GalleryStr;
 
         await prisma.$transaction(
             Object.entries(settings).map(([key, value]) =>
@@ -482,6 +503,9 @@ export async function createCar(formData: FormData) {
             name: formData.get("name") as string,
             details: formData.get("details") as string,
             hourlyPrice: formData.get("hourly-price") as string || null,
+            transmission: formData.get("transmission") as string || "Automatic",
+            seats: formData.get("seats") as string || "5 Seats",
+            ac: formData.get("ac") as string || "Dual A/C",
         };
 
         console.log("[CREATE_CAR] Extracting data:", data);
@@ -549,6 +573,9 @@ export async function updateCar(id: string, formData: FormData) {
             name: formData.get("name") as string,
             details: formData.get("details") as string,
             hourlyPrice: formData.get("hourly-price") as string || null,
+            transmission: formData.get("transmission") as string || "Automatic",
+            seats: formData.get("seats") as string || "5 Seats",
+            ac: formData.get("ac") as string || "Dual A/C",
         };
 
         const result = CarSchema.safeParse(data);
@@ -745,4 +772,55 @@ export async function registerAdmin(formData: FormData) {
     }
 
     return { success: true };
+}
+
+// --- Carousel Actions ---
+
+export async function createCarouselImage(formData: FormData) {
+    try {
+        await checkAuth();
+
+        let imageUrl = formData.get("image-url") as string;
+        const imageFile = formData.get("image-file") as File;
+
+        if (imageFile && imageFile.size > 0) {
+            imageUrl = await saveFile(imageFile);
+        }
+
+        if (!imageUrl) {
+            return { success: false, error: "Please provide an image file or URL" };
+        }
+
+        const orderStr = formData.get("order") as string;
+        const order = parseInt(orderStr, 10) || 0;
+
+        await prisma.carouselImage.create({
+            data: {
+                imageUrl,
+                order
+            },
+        });
+
+        revalidatePath("/");
+        revalidatePath("/veela-travels-2026/carousel");
+        
+        return { success: true };
+    } catch (error: any) {
+        if (isRedirect(error)) throw error;
+        console.error("[CREATE_CAROUSEL_IMAGE] Error:", error);
+        return { 
+            success: false, 
+            error: error.message || "An unexpected error occurred during carousel image creation" 
+        };
+    }
+}
+
+export async function deleteCarouselImage(id: string) {
+    await checkAuth();
+    await prisma.carouselImage.delete({
+        where: { id },
+    });
+    await logAdminAction("Delete Carousel Image", { id });
+    revalidatePath("/");
+    revalidatePath("/veela-travels-2026/carousel");
 }
