@@ -52,7 +52,7 @@ export const HotelHeroCarousel = () => {
     };
 
     return (
-        <section className="relative w-full h-[60vh] md:h-[95vh] overflow-hidden bg-slate-900">
+        <section className="relative w-full h-[60vh] md:h-[95vh] overflow-hidden bg-slate-900 mt-20 md:mt-24">
             <AnimatePresence mode="wait">
                 <motion.div
                     key={currentIndex}
