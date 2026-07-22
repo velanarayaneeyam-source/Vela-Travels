@@ -31,37 +31,9 @@ export const VehicleRentals = ({ cars, settings }: VehicleRentalsProps) => {
     const vehicle1Gallery = settings.homeVehicle1Gallery ? settings.homeVehicle1Gallery.split(',').map(src => ({ src, alt: 'Gallery Image' })) : [];
     const vehicle2Gallery = settings.homeVehicle2Gallery ? settings.homeVehicle2Gallery.split(',').map(src => ({ src, alt: 'Gallery Image' })) : [];
 
-    const staticVehicles: Vehicle[] = [
-        {
-            id: 'suv',
-            name: 'Premium SUV',
-            desc: 'Travel in style with our luxury 5-seater.',
-            thumb: settings.homeVehicle1Image || '/premium-car.png',
-            images: [
-                { src: settings.homeVehicle1Image || '/premium-car.png', alt: 'Exterior View' },
-                ...vehicle1Gallery,
-                ...(vehicle1Gallery.length === 0 ? [
-                    { src: '/suv-interior-front.png', alt: 'Front Interior & Dashboard' },
-                    { src: '/suv-interior-rear.png', alt: 'Rear Seating & Sunroof' }
-                ] : [])
-            ]
-        },
-        {
-            id: 'traveller',
-            name: 'Force Traveller',
-            desc: 'Perfect for group tours and corporate trips.',
-            thumb: settings.homeVehicle2Image || '/hero-traveller.png',
-            images: [
-                { src: settings.homeVehicle2Image || '/hero-traveller.png', alt: 'Exterior View' },
-                ...vehicle2Gallery,
-                ...(vehicle2Gallery.length === 0 ? [
-                    { src: '/traveller-interior.png', alt: 'Spacious Interior' }
-                ] : [])
-            ]
-        }
-    ];
 
-    const dynamicVehicles: Vehicle[] = cars.map(car => ({
+
+    const vehicles: Vehicle[] = cars.map(car => ({
         id: car.id,
         name: car.name,
         desc: car.details,
@@ -71,8 +43,6 @@ export const VehicleRentals = ({ cars, settings }: VehicleRentalsProps) => {
             ...car.images.map(img => ({ src: img, alt: 'Gallery Image' }))
         ]
     }));
-
-    const vehicles = [...staticVehicles, ...dynamicVehicles];
 
     const [activeVehicle, setActiveVehicle] = useState<Vehicle | null>(null);
     const [activeImageIdx, setActiveImageIdx] = useState(0);

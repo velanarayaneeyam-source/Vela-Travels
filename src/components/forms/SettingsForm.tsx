@@ -128,14 +128,7 @@ export const SettingsForm = ({ initialSettings }: { initialSettings: Record<stri
             ]
         },
 
-        {
-            title: "Homepage Featured Vehicles",
-            icon: Car,
-            fields: [
-                { key: "homeVehicle1Image", label: "Vehicle 1 Image (Premium SUV)", type: "image", icon: ImageIcon },
-                { key: "homeVehicle2Image", label: "Vehicle 2 Image (Force Traveller)", type: "image", icon: ImageIcon },
-            ]
-        },
+
         {
             title: "Footer Content",
             icon: Type,

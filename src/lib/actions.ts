@@ -781,25 +781,32 @@ export async function createCarouselImage(formData: FormData) {
         await checkAuth();
 
         let imageUrl = formData.get("image-url") as string;
-        const imageFile = formData.get("image-file") as File;
-
-        if (imageFile && imageFile.size > 0) {
-            imageUrl = await saveFile(imageFile);
-        }
-
-        if (!imageUrl) {
-            return { success: false, error: "Please provide an image file or URL" };
-        }
+        const imageFiles = formData.getAll("image-file") as File[];
+        const validFiles = imageFiles.filter(file => file && file.size > 0);
 
         const orderStr = formData.get("order") as string;
-        const order = parseInt(orderStr, 10) || 0;
+        let order = parseInt(orderStr, 10) || 0;
 
-        await prisma.carouselImage.create({
-            data: {
-                imageUrl,
-                order
-            },
-        });
+        if (validFiles.length > 0) {
+            for (const file of validFiles) {
+                const url = await saveFile(file);
+                await prisma.carouselImage.create({
+                    data: {
+                        imageUrl: url,
+                        order: order++
+                    },
+                });
+            }
+        } else if (imageUrl) {
+            await prisma.carouselImage.create({
+                data: {
+                    imageUrl,
+                    order
+                },
+            });
+        } else {
+            return { success: false, error: "Please provide an image file or URL" };
+        }
 
         revalidatePath("/");
         revalidatePath("/veela-travels-2026/carousel");

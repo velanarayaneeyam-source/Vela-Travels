@@ -13,8 +13,8 @@ export default async function ManageCarouselPage() {
         <div className="space-y-8">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
-                    <h1 className="text-4xl font-black text-white tracking-tight mb-2">Home Carousel</h1>
-                    <p className="text-slate-400">Manage the large auto-playing images on the home page.</p>
+                    <h1 className="text-4xl font-black text-white tracking-tight mb-2">Vehicles Page Carousel</h1>
+                    <p className="text-slate-400">Manage the large auto-playing images at the top of the Vehicles page.</p>
                 </div>
             </div>
 

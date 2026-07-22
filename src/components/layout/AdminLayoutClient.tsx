@@ -24,6 +24,7 @@ const ADMIN_LINKS = [
 
     { name: 'Manage Tours', href: '/veela-travels-2026/tours', icon: MapPin },
     { name: 'Manage Cars', href: '/veela-travels-2026/cars', icon: Car },
+    { name: 'Vehicles Carousel', href: '/veela-travels-2026/carousel', icon: ImageIcon },
     { name: 'Customer Inquiries', href: '/veela-travels-2026/inquiries', icon: MessageSquare },
     { name: 'Testimonials', href: '/veela-travels-2026/testimonials', icon: Star },
     { name: 'Site Settings', href: '/veela-travels-2026/settings', icon: Globe },

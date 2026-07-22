@@ -13,9 +13,9 @@ export default function CarouselUploadForm() {
     const [filePreview, setFilePreview] = useState<string | null>(null);
 
     const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files?.[0];
-        if (file) {
-            const url = URL.createObjectURL(file);
+        const files = e.target.files;
+        if (files && files.length > 0) {
+            const url = URL.createObjectURL(files[0]);
             setFilePreview(url);
             setPreviewUrl(url);
         }
@@ -100,6 +100,7 @@ export default function CarouselUploadForm() {
                             name="image-file"
                             type="file"
                             accept="image/*"
+                            multiple
                             onChange={handleFileChange}
                             required={!previewUrl}
                             className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
@@ -107,7 +108,7 @@ export default function CarouselUploadForm() {
                         <div className="w-full px-5 py-4 bg-slate-950/50 border border-white/10 rounded-2xl text-slate-400 text-xs outline-none group-hover:border-primary/50 transition-all flex items-center gap-3">
                             <Upload className="w-4 h-4" />
                             <span className="truncate">
-                                {filePreview ? 'File selected' : 'Click to select image...'}
+                                {filePreview ? 'File(s) selected' : 'Click to select multiple images...'}
                             </span>
                         </div>
                     </div>

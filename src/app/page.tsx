@@ -6,6 +6,7 @@ import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { QuickContact } from "@/components/sections/QuickContact";
 import { VehicleRentals } from "@/components/sections/VehicleRentals";
+
 import { SpaAndWellness } from "@/components/sections/SpaAndWellness";
 import { AyurvedicTreatments } from "@/components/sections/AyurvedicTreatments";
 import { prisma } from "@/lib/db";
@@ -38,6 +39,8 @@ async function VehicleRentalsWrapper() {
     return <VehicleRentals cars={cars} settings={settings} />;
 }
 
+
+
 async function TestimonialsData() {
     const testimonials = await getTestimonials();
     return <Testimonials testimonials={testimonials} />;
@@ -59,12 +62,14 @@ export default function Home() {
       <Suspense fallback={<div className="min-h-screen bg-slate-900 animate-pulse" />}>
         <HeroWrapper />
       </Suspense>
-      
+
+      <Suspense fallback={<div className="w-full h-[60vh] bg-slate-900 animate-pulse" />}>
+        <HeroCarouselWrapper />
+      </Suspense>
+
       <Suspense fallback={<div className="h-96 bg-slate-50 animate-pulse" />}>
         <VehicleRentalsWrapper />
       </Suspense>
-
-
 
       <SpaAndWellness />
 

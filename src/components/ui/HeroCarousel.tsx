@@ -20,7 +20,7 @@ export function HeroCarouselClient({ images, heightClass = "h-[60vh] md:h-[80vh]
 
         const interval = setInterval(() => {
             setCurrentIndex((prev) => (prev + 1) % images.length);
-        }, 2500); // 2.5 seconds
+        }, 1800); // 1.8 seconds
 
         return () => clearInterval(interval);
     }, [images.length]);

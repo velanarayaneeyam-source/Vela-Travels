@@ -23,7 +23,7 @@ export const HeroSection = ({ settings }: HeroSectionProps) => {
                     src={heroImage}
                     alt="Travel Background"
                     fill
-                    className="object-cover object-center scale-100 transition-opacity duration-700 brightness-[1.08]"
+                    className="object-cover object-[center_30%] scale-100 transition-opacity duration-700 brightness-[1.08]"
                     priority
                 />
 
