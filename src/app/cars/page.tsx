@@ -193,12 +193,6 @@ export default async function CarsPage({
                             
                             {/* Top Badge Pills Bar (Flex Wrap so all badges are visible) */}
                             <div className="flex flex-wrap items-center gap-3">
-                                <span className="px-4 py-2 rounded-xl bg-teal-500/20 border border-teal-500/30 text-teal-300 text-xs font-bold flex items-center gap-1.5">
-                                    ✈️ Airport Transfers
-                                </span>
-                                <span className="px-4 py-2 rounded-xl bg-blue-500/20 border border-blue-500/30 text-blue-300 text-xs font-bold flex items-center gap-1.5">
-                                    🏨 Doorstep Pickup
-                                </span>
                                 <span className="px-4 py-2 rounded-xl bg-amber-500/20 border border-amber-500/30 text-amber-300 text-xs font-bold flex items-center gap-1.5">
                                     📍 Palakkad & Nenmara
                                 </span>
@@ -214,18 +208,10 @@ export default async function CarsPage({
                                 <div className="space-y-3">
                                     <div className="bg-slate-950 p-4 rounded-2xl border border-white/10 flex items-center justify-between">
                                         <div>
-                                            <div className="text-sm font-black text-white">Toyota Innova Crysta</div>
-                                            <div className="text-xs text-slate-400">7-Seater Luxury AC Cab</div>
+                                            <div className="text-sm font-black text-white">Urbania</div>
+                                            <div className="text-xs text-slate-400">Premium Commuter</div>
                                         </div>
-                                        <span className="px-3 py-1.5 rounded-xl bg-emerald-500/20 text-emerald-300 text-xs font-extrabold">AC Outstation</span>
-                                    </div>
-
-                                    <div className="bg-slate-950 p-4 rounded-2xl border border-white/10 flex items-center justify-between">
-                                        <div>
-                                            <div className="text-sm font-black text-white">Suzuki Ertiga / Dzire</div>
-                                            <div className="text-xs text-slate-400">Family Sedan & MPV</div>
-                                        </div>
-                                        <span className="px-3 py-1.5 rounded-xl bg-blue-500/20 text-blue-300 text-xs font-extrabold">Best Rates</span>
+                                        <span className="px-3 py-1.5 rounded-xl bg-emerald-500/20 text-emerald-300 text-xs font-extrabold">Luxury Travel</span>
                                     </div>
 
                                     <div className="bg-slate-950 p-4 rounded-2xl border border-white/10 flex items-center justify-between">
