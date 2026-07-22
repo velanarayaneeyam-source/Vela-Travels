@@ -18,17 +18,18 @@ export const HeroSection = ({ settings }: HeroSectionProps) => {
 
     return (
         <section className="relative min-h-screen flex flex-col justify-between overflow-hidden pt-44 sm:pt-52 md:pt-44 gpu-boost bg-slate-950">
-            <div className="absolute inset-0 z-0 flex items-center justify-center">
-                <Image
-                    src={heroImage}
-                    alt="Travel Background"
-                    fill
-                    className="object-cover object-[center_30%] scale-100 transition-opacity duration-700 brightness-[1.08]"
-                    priority
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
-                <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent z-20" />
+            <div className="absolute inset-0 z-0">
+                <div className="absolute top-0 left-0 w-full h-[50vh] sm:h-full">
+                    <Image
+                        src={heroImage}
+                        alt="Travel Background"
+                        fill
+                        className="object-cover object-center sm:object-[center_30%] scale-100 transition-opacity duration-700 brightness-[1.08]"
+                        priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
+                    <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-slate-950 via-slate-950/90 to-transparent z-20" />
+                </div>
             </div>
 
             <div className="container mx-auto px-6 relative z-10">

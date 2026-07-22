@@ -85,7 +85,7 @@ export const WhyChooseUs = () => {
                     >
                         <div className="aspect-square relative rounded-[3rem] overflow-hidden">
                             <Image
-                                src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2070&auto=format&fit=crop"
+                                src="/vela 9.jpg"
                                 alt="Comfortable Vehicle Journey"
                                 fill
                                 className="object-cover"
