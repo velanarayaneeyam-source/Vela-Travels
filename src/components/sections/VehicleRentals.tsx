@@ -102,18 +102,11 @@ export const VehicleRentals = ({ cars, settings }: VehicleRentalsProps) => {
                             className="relative rounded-3xl overflow-hidden aspect-[16/9] shadow-xl cursor-pointer group bg-slate-950"
                             onClick={() => openGallery(vehicle)}
                         >
-                            {/* Blur background to prevent cropping edges */}
-                            <Image
-                                src={vehicle.thumb}
-                                alt={`${vehicle.name} Blur`}
-                                fill
-                                className="object-cover blur-xl opacity-40 scale-110"
-                            />
                             <Image
                                 src={vehicle.thumb}
                                 alt={vehicle.name}
                                 fill
-                                className="object-contain sm:object-cover group-hover:scale-105 transition-transform duration-700"
+                                className="object-cover group-hover:scale-105 transition-transform duration-700"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 

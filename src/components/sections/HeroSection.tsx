@@ -19,21 +19,12 @@ export const HeroSection = ({ settings }: HeroSectionProps) => {
     return (
         <section className="relative min-h-screen flex flex-col justify-between overflow-hidden pt-44 sm:pt-52 md:pt-44 gpu-boost bg-slate-950">
             <div className="absolute inset-0 z-0">
-                <div className="absolute top-0 left-0 w-full h-[60vh] sm:h-full overflow-hidden bg-slate-950">
-                    {/* Blurred backdrop to fill space gracefully */}
-                    <Image
-                        src={heroImage}
-                        alt="Travel Background Blur"
-                        fill
-                        className="object-cover blur-2xl opacity-45 scale-110"
-                        priority
-                    />
-                    {/* Main uncropped image ensuring flower-adorned vehicle on side is fully visible */}
+                <div className="absolute top-0 left-0 w-full h-[50vh] sm:h-full">
                     <Image
                         src={heroImage}
                         alt="Travel Background"
                         fill
-                        className="object-contain sm:object-cover object-center transition-all duration-700 brightness-[1.08]"
+                        className="object-cover object-center sm:object-[center_30%] scale-100 transition-opacity duration-700 brightness-[1.08]"
                         priority
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
