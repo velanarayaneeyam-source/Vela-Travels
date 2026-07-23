@@ -63,6 +63,23 @@ export function HeroCarouselClient({ images, heightClass = "h-[60vh] md:h-[80vh]
                     />
                     
                     <div className="absolute inset-0 bg-black/10" /> {/* Very light overlay */}
+
+                    {/* Book Vehicle License Plate Badge Button Overlay */}
+                    <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20">
+                        <a
+                            href={`https://wa.me/919207050525?text=${encodeURIComponent("Hi Vela Travels! I would like to book this vehicle.")}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="px-6 py-3 rounded-2xl bg-gradient-to-r from-amber-500 via-rose-500 to-pink-600 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-[0_0_30px_rgba(245,158,11,0.7)] hover:scale-105 transition-all duration-300 border-2 border-white/40 backdrop-blur-xl flex items-center gap-2.5"
+                            title="Covering vehicle license plate - Click to Book"
+                        >
+                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
+                            <span>BOOK VEHICLE</span>
+                            <span className="px-2 py-0.5 text-[9px] bg-black/50 text-amber-300 rounded font-mono border border-amber-400/40">
+                                KL-OFFICIAL
+                            </span>
+                        </a>
+                    </div>
                 </motion.div>
             </AnimatePresence>
 

@@ -99,24 +99,45 @@ export const VehicleRentals = ({ cars, settings }: VehicleRentalsProps) => {
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: i * 0.1 }}
-                            className="relative rounded-3xl overflow-hidden aspect-[16/9] shadow-xl cursor-pointer group"
+                            className="relative rounded-3xl overflow-hidden aspect-[16/9] shadow-xl cursor-pointer group bg-slate-950"
                             onClick={() => openGallery(vehicle)}
                         >
+                            {/* Blur background to prevent cropping edges */}
+                            <Image
+                                src={vehicle.thumb}
+                                alt={`${vehicle.name} Blur`}
+                                fill
+                                className="object-cover blur-xl opacity-40 scale-110"
+                            />
                             <Image
                                 src={vehicle.thumb}
                                 alt={vehicle.name}
                                 fill
-                                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                className="object-contain sm:object-cover group-hover:scale-105 transition-transform duration-700"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                            <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+
+                            {/* Floating "Book Vehicle" Button Overlay Covering Numberplate */}
+                            <div className="absolute bottom-[4.5rem] left-1/2 -translate-x-1/2 z-20" onClick={(e) => e.stopPropagation()}>
+                                <a
+                                    href={`https://wa.me/919207050525?text=${encodeURIComponent(`Hi Vela Travels! I want to book ${vehicle.name || "this vehicle"}.`)}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 via-rose-500 to-pink-600 text-white font-black text-xs uppercase tracking-wider shadow-[0_0_20px_rgba(245,158,11,0.6)] hover:scale-105 transition-transform border border-white/30 flex items-center gap-2 backdrop-blur-md"
+                                >
+                                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                                    <span>BOOK VEHICLE</span>
+                                </a>
+                            </div>
+
+                            <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between z-10">
                                 <div>
-                                    <h3 className="text-white font-bold text-2xl mb-2">{vehicle.name}</h3>
-                                    <p className="text-slate-200 text-sm">{vehicle.desc}</p>
+                                    <h3 className="text-white font-bold text-2xl mb-1">{vehicle.name}</h3>
+                                    <p className="text-slate-200 text-sm">{vehicle.desc || "Flower Decorated & Premium Fleet"}</p>
                                 </div>
-                                <div className="bg-white/20 backdrop-blur-md rounded-full p-4 border border-white/30 text-white hover:bg-white/30 transition-colors flex items-center gap-2">
-                                    <ImageIcon className="w-5 h-5" />
-                                    <span className="text-sm font-bold">View Gallery</span>
+                                <div className="bg-white/20 backdrop-blur-md rounded-full px-4 py-2 border border-white/30 text-white hover:bg-white/30 transition-colors flex items-center gap-2">
+                                    <ImageIcon className="w-4 h-4" />
+                                    <span className="text-xs font-bold">Gallery</span>
                                 </div>
                             </div>
                         </motion.div>
