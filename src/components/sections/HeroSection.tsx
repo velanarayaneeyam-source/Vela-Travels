@@ -39,19 +39,19 @@ export const HeroSection = ({ settings }: HeroSectionProps) => {
                         initial={{ opacity: 0, y: -15 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
-                        className="inline-flex flex-wrap items-center justify-center gap-3 sm:gap-3.5 px-6 sm:px-8 py-3 sm:py-3.5 rounded-3xl sm:rounded-full border-2 border-pink-500/35 text-white mb-6 md:mb-8 shadow-[0_0_35px_rgba(236,72,153,0.3)] bg-slate-950/85 backdrop-blur-xl text-xs sm:text-sm font-extrabold"
+                        className="inline-flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-3.5 px-2 sm:px-8 py-2 sm:py-3.5 rounded-[2rem] sm:rounded-full border-transparent sm:border-2 sm:border-pink-500/35 text-white mb-6 md:mb-8 shadow-none sm:shadow-[0_0_35px_rgba(236,72,153,0.3)] bg-transparent sm:bg-slate-950/85 sm:backdrop-blur-xl text-xs sm:text-sm font-extrabold w-full sm:w-auto mx-auto"
                     >
-                        <span className="text-pink-400 font-black uppercase tracking-widest text-xs sm:text-sm flex items-center gap-2">
+                        <span className="text-pink-400 font-black uppercase tracking-widest text-xs sm:text-sm flex items-center gap-2 drop-shadow-md">
                             <MapPin className="w-4 h-4 text-pink-400 animate-bounce" />
                             Location:
                         </span>
-                        <span className="px-3.5 py-1.5 sm:px-4 sm:py-1.5 rounded-full bg-pink-500/25 text-pink-200 border-2 border-pink-500/50 font-bold shadow-md hover:scale-105 transition-transform flex items-center gap-1.5">
+                        <span className="px-3.5 py-1.5 sm:px-4 sm:py-1.5 rounded-full bg-transparent sm:bg-pink-500/25 text-pink-200 border border-pink-500/40 sm:border-2 sm:border-pink-500/50 font-bold shadow-none sm:shadow-md hover:scale-105 transition-transform flex items-center gap-1.5 backdrop-blur-none drop-shadow-md">
                             📍 Cherupushpam School, Vadakkencherry
                         </span>
-                        <span className="px-3.5 py-1.5 sm:px-4 sm:py-1.5 rounded-full bg-amber-500/25 text-amber-200 border-2 border-amber-500/50 font-bold shadow-md hover:scale-105 transition-transform flex items-center gap-1.5">
+                        <span className="px-3.5 py-1.5 sm:px-4 sm:py-1.5 rounded-full bg-transparent sm:bg-amber-500/25 text-amber-200 border border-amber-500/40 sm:border-2 sm:border-amber-500/50 font-bold shadow-none sm:shadow-md hover:scale-105 transition-transform flex items-center gap-1.5 backdrop-blur-none drop-shadow-md">
                             🚌 Nenmara Bus stand
                         </span>
-                        <span className="px-3.5 py-1.5 sm:px-4 sm:py-1.5 rounded-full bg-emerald-500/25 text-emerald-200 border-2 border-emerald-500/50 font-bold shadow-md hover:scale-105 transition-transform flex items-center gap-1.5">
+                        <span className="px-3.5 py-1.5 sm:px-4 sm:py-1.5 rounded-full bg-transparent sm:bg-emerald-500/25 text-emerald-200 border border-emerald-500/40 sm:border-2 sm:border-emerald-500/50 font-bold shadow-none sm:shadow-md hover:scale-105 transition-transform flex items-center gap-1.5 backdrop-blur-none drop-shadow-md">
                             🎓 NSS College, Nenmara
                         </span>
                     </motion.div>
