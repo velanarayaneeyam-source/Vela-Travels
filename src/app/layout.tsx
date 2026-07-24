@@ -21,12 +21,12 @@ export const metadata: Metadata = {
     default: "Vela Travels | Car Rental & Taxi Service in Nenmara, Palakkad",
     template: "%s | Vela Travels Nenmara"
   },
-  description: "Best Car Rental, Taxi Service & Tour Operator in Nenmara, Aliyur (near NSS College), Palakkad, Kerala. Luxury cars, self-drive rentals, airport transfers & Ayurveda wellness tours.",
+  description: "Best Car Rental, Taxi Service & Tour Operator in Nenmara, Ayilur (near NSS College), Palakkad, Kerala. Luxury cars, self-drive rentals, airport transfers & Ayurveda wellness tours.",
   keywords: [
     "Vela Travels",
     "Vehicle Rent Kerala",
     "Car Rent Nenmara",
-    "Car Rental Aliyur",
+    "Car Rental Ayilur",
     "Car Rental near NSS College Nemmara",
     "Self Drive Cars Palakkad",
     "Best Tour Operator Nemmara",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Vela Travels | Car Rental & Taxi Service in Nenmara, Palakkad",
-    description: "Premier Car Rental & Tour Operator located at Aliyur, Near NSS College, Nenmara, Palakkad. Premium cars, airport cabs & custom tour packages.",
+    description: "Premier Car Rental & Tour Operator located at Ayilur, Near NSS College, Nenmara, Palakkad. Premium cars, airport cabs & custom tour packages.",
     url: siteUrl,
     siteName: "Vela Travels",
     locale: "en_IN",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Vela Travels | Car Rental in Nenmara, Palakkad",
-    description: "Reliable Car Rental & Taxi Service at Aliyur, Near NSS College, Nenmara, Palakkad, Kerala.",
+    description: "Reliable Car Rental & Taxi Service at Ayilur, Near NSS College, Nenmara, Palakkad, Kerala.",
     images: [`${siteUrl}/og-image.jpg`]
   },
   robots: {
@@ -89,7 +89,7 @@ const jsonLd = {
   "priceRange": "₹₹",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Aliyur, Near NSS College",
+    "streetAddress": "Ayilur, Near NSS College",
     "addressLocality": "Nenmara",
     "addressRegion": "Kerala",
     "postalCode": "678508",
@@ -110,7 +110,7 @@ const jsonLd = {
   },
   "areaServed": [
     { "@type": "Place", "name": "Nenmara" },
-    { "@type": "Place", "name": "Aliyur" },
+    { "@type": "Place", "name": "Ayilur" },
     { "@type": "Place", "name": "Palakkad" },
     { "@type": "Place", "name": "Kerala" },
     { "@type": "Place", "name": "Cochin International Airport" },

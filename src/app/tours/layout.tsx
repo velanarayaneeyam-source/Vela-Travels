@@ -4,7 +4,7 @@ const siteUrl = process.env.NEXTAUTH_URL || 'https://vela-travels-kkos-seven.ver
 
 export const metadata: Metadata = {
   title: "Tour Packages in Palakkad & Kerala Sightseeing | Vela Travels",
-  description: "Book customized tour packages in Palakkad, Nelliampathy, Wayanad & Kerala. Complete sightseeing & cab rental packages from Nenmara & Aliyur.",
+  description: "Book customized tour packages in Palakkad, Nelliampathy, Wayanad & Kerala. Complete sightseeing & cab rental packages from Nenmara & Ayilur.",
   keywords: [
     "Tour Packages Palakkad",
     "Kerala Tour Operator Nemmara",

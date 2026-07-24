@@ -4,13 +4,13 @@ const siteUrl = process.env.NEXTAUTH_URL || 'https://vela-travels-kkos-seven.ver
 
 export const metadata: Metadata = {
   title: "About Us | Vela Travels Nenmara Palakkad",
-  description: "Learn about Vela Travels in Aliyur, Nenmara (near NSS College). Premier car rental, airport taxi transfers, and custom Kerala tour packages with transparent pricing.",
+  description: "Learn about Vela Travels in Ayilur, Nenmara (near NSS College). Premier car rental, airport taxi transfers, and custom Kerala tour packages with transparent pricing.",
   keywords: [
     "About Vela Travels",
     "Car Rental Company Nenmara",
     "Taxi Operator Palakkad",
     "Travel Agency Nemmara",
-    "Aliyur Car Rentals",
+    "Ayilur Car Rentals",
     "Best Tour Operators Palakkad"
   ],
   alternates: {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "About Us | Vela Travels Nenmara Palakkad",
-    description: "Premier Car Rental & Tour Operator located at Aliyur, Near NSS College, Nenmara, Palakkad.",
+    description: "Premier Car Rental & Tour Operator located at Ayilur, Near NSS College, Nenmara, Palakkad.",
     url: `${siteUrl}/about`,
     siteName: "Vela Travels",
     locale: "en_IN",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "About Us | Vela Travels Nenmara",
-    description: "Premier Car Rental & Tour Operator located at Aliyur, Near NSS College, Nenmara, Palakkad.",
+    description: "Premier Car Rental & Tour Operator located at Ayilur, Near NSS College, Nenmara, Palakkad.",
     images: [`${siteUrl}/og-image.jpg`]
   }
 };

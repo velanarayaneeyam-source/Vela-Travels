@@ -43,7 +43,7 @@ export const HeroSection = ({ settings }: HeroSectionProps) => {
                     >
                         <span className="text-pink-400 font-black uppercase tracking-widest text-xs sm:text-sm flex items-center gap-2">
                             <MapPin className="w-4 h-4 text-pink-400 animate-bounce" />
-                            Pickuphub:
+                            Location:
                         </span>
                         <span className="px-3.5 py-1.5 sm:px-4 sm:py-1.5 rounded-full bg-pink-500/25 text-pink-200 border-2 border-pink-500/50 font-bold shadow-md hover:scale-105 transition-transform flex items-center gap-1.5">
                             📍 Cherupushpam School, Vadakkencherry
@@ -60,13 +60,23 @@ export const HeroSection = ({ settings }: HeroSectionProps) => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass border-white/20 text-white mb-6 md:mb-8 shadow-xl bg-black/40 backdrop-blur-md"
+                        className="inline-flex flex-wrap items-center justify-center gap-3 mb-6 md:mb-8"
                     >
-                        <span className="w-2.5 h-2.5 rounded-full bg-pink-500 animate-pulse shadow-[0_0_10px_rgba(236,72,153,0.8)]" />
-                        <span className="text-xs sm:text-sm font-extrabold tracking-wider flex items-center gap-2 text-white">
-                            <Plane className="w-4 h-4 text-pink-400" />
-                            YOUR JOURNEY STARTS HERE
-                        </span>
+                        <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass border-white/20 text-white shadow-xl bg-black/40 backdrop-blur-md">
+                            <span className="w-2.5 h-2.5 rounded-full bg-pink-500 animate-pulse shadow-[0_0_10px_rgba(236,72,153,0.8)]" />
+                            <span className="text-xs sm:text-sm font-extrabold tracking-wider flex items-center gap-2 text-white">
+                                <Plane className="w-4 h-4 text-pink-400" />
+                                YOUR JOURNEY STARTS HERE
+                            </span>
+                        </div>
+
+                        <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border-2 border-emerald-400/50 text-emerald-300 shadow-[0_0_20px_rgba(52,211,153,0.4)] bg-slate-950/80 backdrop-blur-md">
+                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_10px_rgba(52,211,153,0.8)]" />
+                            <span className="text-xs sm:text-sm font-black tracking-wider flex items-center gap-2 text-emerald-200 uppercase">
+                                <Globe className="w-4 h-4 text-emerald-400" />
+                                🇮🇳 ALL INDIA SERVICE AVAILABLE
+                            </span>
+                        </div>
                     </motion.div>
 
                     <motion.h1

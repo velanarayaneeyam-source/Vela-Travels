@@ -169,7 +169,7 @@ export default async function CarsPage({
                             </h2>
 
                             <p className="text-slate-300 text-base md:text-lg font-medium leading-relaxed max-w-xl">
-                                Toyota Innova Crysta, Suzuki Ertiga, Swift Dzire, and Tempo Travellers for outstation trips, airport transfers, and hill station packages in Nenmara & Palakkad.
+                                Urbania, Tempo Traveller, and Tata Winger++ for outstation trips, airport transfers, and hill station packages in Vadakkencherry, Nenmara, and Palakkad.
                             </p>
 
                             <div className="flex flex-wrap items-center gap-4 pt-4">
@@ -194,7 +194,7 @@ export default async function CarsPage({
                             {/* Top Badge Pills Bar (Flex Wrap so all badges are visible) */}
                             <div className="flex flex-wrap items-center gap-3">
                                 <span className="px-4 py-2 rounded-xl bg-amber-500/20 border border-amber-500/30 text-amber-300 text-xs font-bold flex items-center gap-1.5">
-                                    📍 Palakkad & Nenmara
+                                    📍 Vadakkencherry, Nenmara & Palakkad
                                 </span>
                             </div>
 
@@ -216,10 +216,18 @@ export default async function CarsPage({
 
                                     <div className="bg-slate-950 p-4 rounded-2xl border border-white/10 flex items-center justify-between">
                                         <div>
-                                            <div className="text-sm font-black text-white">Tempo Traveller (12-26 Seater)</div>
+                                            <div className="text-sm font-black text-white">Tempo Traveller</div>
                                             <div className="text-xs text-slate-400">Group & Wedding Fleet</div>
                                         </div>
                                         <span className="px-3 py-1.5 rounded-xl bg-purple-500/20 text-purple-300 text-xs font-extrabold">Group Tours</span>
+                                    </div>
+
+                                    <div className="bg-slate-950 p-4 rounded-2xl border border-white/10 flex items-center justify-between">
+                                        <div>
+                                            <div className="text-sm font-black text-white">Tata Winger++</div>
+                                            <div className="text-xs text-slate-400">Comfortable Travel</div>
+                                        </div>
+                                        <span className="px-3 py-1.5 rounded-xl bg-blue-500/20 text-blue-300 text-xs font-extrabold">Family Trips</span>
                                     </div>
                                 </div>
                             </div>

@@ -4,13 +4,13 @@ const siteUrl = process.env.NEXTAUTH_URL || 'https://vela-travels-kkos-seven.ver
 
 export const metadata: Metadata = {
   title: "Car Rentals & Self Drive Vehicles in Nenmara, Palakkad | Vela Travels",
-  description: "Explore our fleet of luxury sedans, SUVs, self-drive cars & airport cabs in Nenmara, Aliyur (near NSS College), Palakkad. Best hourly & daily rental rates.",
+  description: "Explore our fleet of luxury sedans, SUVs, self-drive cars & airport cabs in Nenmara, Ayilur (near NSS College), Palakkad. Best hourly & daily rental rates.",
   keywords: [
     "Car Rental Nenmara",
     "Self Drive Cars Palakkad",
     "SUV Rental Nemmara",
     "Luxury Car Rental Palakkad",
-    "Car Rental Aliyur",
+    "Car Rental Ayilur",
     "Taxi Service near NSS College Nemmara",
     "Wedding Car Rental Palakkad"
   ],
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Car Rentals & Self Drive Vehicles in Nenmara, Palakkad | Vela Travels",
-    description: "Book luxury sedans, SUVs & self-drive cars in Nenmara, Aliyur, Palakkad. Best rates & instant booking.",
+    description: "Book luxury sedans, SUVs & self-drive cars in Nenmara, Ayilur, Palakkad. Best rates & instant booking.",
     url: `${siteUrl}/cars`,
     siteName: "Vela Travels",
     locale: "en_IN",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Car Rentals & Self Drive Vehicles in Nenmara, Palakkad",
-    description: "Book luxury sedans, SUVs & self-drive cars in Nenmara, Aliyur, Palakkad.",
+    description: "Book luxury sedans, SUVs & self-drive cars in Nenmara, Ayilur, Palakkad.",
     images: [`${siteUrl}/og-image.jpg`]
   }
 };

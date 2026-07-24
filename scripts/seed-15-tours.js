@@ -14,7 +14,7 @@ const VERIFIED_TOURS = [
     },
     {
         title: "Pothundi Dam & Reservoir Family Retreat",
-        description: "Visit India's second earth dam constructed in 19th century without cement. Features pristine lake views, lush manicured gardens, and boat rides near Aliyur, Nenmara.",
+        description: "Visit India's second earth dam constructed in 19th century without cement. Features pristine lake views, lush manicured gardens, and boat rides near Ayilur, Nenmara.",
         destination: "Nenmara, Palakkad",
         image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80", // Dam lake & reservoir
         price: "₹2,200",

@@ -62,7 +62,7 @@ export const TravelBot = ({
         }
         
         if (query.includes('contact') || query.includes('phone') || query.includes('call') || query.includes('email') || query.includes('info') || query.includes('location') || query.includes('address') || query.includes('where')) {
-            return `You can reach our travel experts anytime!\n\n📞 Phone: ${activeSettings.phone || '+91 92070 50525'}\n📧 Email: ${activeSettings.email || 'velatravelsnmra@gmail.com'}\n📍 Office: ${activeSettings.address || 'Aliyur, Near NSS College, Nenmara, Palakkad 678508'}`;
+            return `You can reach our travel experts anytime!\n\n📞 Phone: ${activeSettings.phone || '+91 92070 50525'}\n📧 Email: ${activeSettings.email || 'velatravelsnmra@gmail.com'}\n📍 Office: ${activeSettings.address || 'Ayilur, Near NSS College, Nenmara, Palakkad 678508'}`;
         }
 
         if (query.includes('service') || query.includes('offer') || query.includes('ayurveda') || query.includes('massage') || query.includes('what do you do')) {

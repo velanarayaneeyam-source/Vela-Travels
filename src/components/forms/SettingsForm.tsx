@@ -115,7 +115,7 @@ export const SettingsForm = ({ initialSettings }: { initialSettings: Record<stri
                 { key: "phone", label: "Phone Number", type: "text", icon: Phone, placeholder: "+91 92070 50525" },
                 { key: "whatsapp", label: "WhatsApp Number (Direct Link)", type: "text", icon: MessageCircle, placeholder: "919207050525" },
                 { key: "email", label: "Email Address", type: "email", icon: Mail, placeholder: "velatravelsnmra@gmail.com" },
-                { key: "address", label: "Office Address", type: "textarea", icon: MapPin, placeholder: "Aliyur, Near NSS College, Nenmara, Palakkad 678508" },
+                { key: "address", label: "Office Address", type: "textarea", icon: MapPin, placeholder: "Ayilur, Near NSS College, Nenmara, Palakkad 678508" },
             ]
         },
         {

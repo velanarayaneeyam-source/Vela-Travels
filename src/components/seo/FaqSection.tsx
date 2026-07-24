@@ -11,7 +11,7 @@ export interface FaqItem {
 const DEFAULT_FAQS: FaqItem[] = [
   {
     question: "Where is Vela Travels located in Nenmara, Palakkad?",
-    answer: "Vela Travels is located at Aliyur, Near NSS College, Nenmara, Palakkad District, Kerala (PIN: 678508). We serve Nenmara, Chittur, Kollengode, Vadakkencherry, and surrounding areas in Palakkad."
+    answer: "Vela Travels is located at Ayilur, Near NSS College, Nenmara, Palakkad District, Kerala (PIN: 678508). We serve Nenmara, Chittur, Kollengode, Vadakkencherry, and surrounding areas in Palakkad."
   },
   {
     question: "Do you offer airport taxi pickup and drop-off to Cochin and Coimbatore airports?",
