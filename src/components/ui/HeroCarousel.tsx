@@ -70,7 +70,7 @@ export function HeroCarouselClient({ images, heightClass = "h-[60vh] md:h-[80vh]
                             href={`https://wa.me/919207050525?text=${encodeURIComponent("Hi Vela Travels! I would like to book this vehicle.")}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-6 py-3 rounded-2xl bg-gradient-to-r from-amber-500 via-rose-500 to-pink-600 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-[0_0_30px_rgba(245,158,11,0.7)] hover:scale-105 transition-all duration-300 border-2 border-white/40 backdrop-blur-xl flex items-center gap-2.5"
+                            className="px-3 py-1.5 md:px-6 md:py-3 rounded-xl md:rounded-2xl bg-gradient-to-r from-amber-500 via-rose-500 to-pink-600 text-white font-black text-[10px] sm:text-xs md:text-sm uppercase tracking-wider shadow-[0_0_30px_rgba(245,158,11,0.7)] hover:scale-105 transition-all duration-300 border border-white/40 md:border-2 backdrop-blur-xl flex items-center gap-1.5 md:gap-2.5"
                             title="Covering vehicle license plate - Click to Book"
                         >
                             <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />

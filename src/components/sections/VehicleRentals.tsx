@@ -116,7 +116,7 @@ export const VehicleRentals = ({ cars, settings }: VehicleRentalsProps) => {
                                     href={`https://wa.me/919207050525?text=${encodeURIComponent(`Hi Vela Travels! I want to book ${vehicle.name || "this vehicle"}.`)}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 via-rose-500 to-pink-600 text-white font-black text-xs uppercase tracking-wider shadow-[0_0_20px_rgba(245,158,11,0.6)] hover:scale-105 transition-transform border border-white/30 flex items-center gap-2 backdrop-blur-md"
+                                    className="px-3 py-1.5 md:px-5 md:py-2.5 rounded-lg md:rounded-xl bg-gradient-to-r from-amber-500 via-rose-500 to-pink-600 text-white font-black text-[10px] md:text-xs uppercase tracking-wider shadow-[0_0_20px_rgba(245,158,11,0.6)] hover:scale-105 transition-transform border border-white/30 flex items-center gap-1.5 md:gap-2 backdrop-blur-md"
                                 >
                                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
                                     <span>BOOK VEHICLE</span>

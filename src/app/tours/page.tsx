@@ -135,7 +135,7 @@ export default async function ToursPage({
                             Everything You Need for <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-500 to-blue-600">Kerala Travel</span>
                         </h2>
                         <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg">
-                            From scenic hill station getaways to luxury cab rentals with experienced local drivers in Nenmara & Palakkad.
+                            From scenic hill station getaways to luxury cab rentals with experienced local drivers in Vadakkencherry, Nenmara & Palakkad.
                         </p>
                     </div>
 
@@ -170,7 +170,7 @@ export default async function ToursPage({
                                 Car & Cab Rental Fleet
                             </h3>
                             <p className="text-blue-900 text-sm font-semibold leading-relaxed mb-8">
-                                Toyota Innova Crysta, Suzuki Ertiga, Swift Dzire & Tempo Travellers available with AC for outstation trips.
+                                Urbania, Premium Commuter, Luxury Travel, Tempo Traveller, Group & Wedding Fleet, Group Tours, Tata Winger++, Comfortable Travel, and Family Trips available with AC for outstation trips.
                             </p>
                             <a 
                                 href="/cars" 
@@ -222,7 +222,7 @@ export default async function ToursPage({
                     {/* Popular Routes Pills Bar (Bright Light Theme) */}
                     <div className="bg-slate-50 border-2 border-slate-200 p-8 md:p-10 rounded-[2.5rem] text-center space-y-6 shadow-xl">
                         <p className="text-sm font-black text-slate-900 uppercase tracking-[0.2em] flex items-center justify-center gap-2">
-                            <span>🔥</span> Popular Destinations & Taxi Routes from Nenmara
+                            <span>🔥</span> Popular Destinations & Taxi Routes from Vadakkencherry, Nenmara
                         </p>
                         <div className="flex flex-wrap items-center justify-center gap-3">
                             {[
@@ -263,7 +263,7 @@ export default async function ToursPage({
                                 🌐 Premium Kerala Tour & Travel Experience
                             </span>
                             <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-tight">
-                                Best Tours & Travel Packages in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">Nenmara & Palakkad</span>
+                                Best Tours & Travel Packages in <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">Vadakkencherry, Nenmara & Palakkad</span>
                             </h2>
                             <p className="text-slate-600 dark:text-slate-300 text-base md:text-lg font-medium max-w-2xl mx-auto leading-relaxed">
                                 Book custom sightseeing packages, outstation cabs, and hill station tours with verified local drivers and 24/7 assistance.
@@ -301,8 +301,8 @@ export default async function ToursPage({
                                         📱 INSTANT BOOKING
                                     </div>
                                     <div className="bg-blue-600/30 p-2.5 rounded-xl border border-blue-500/30 text-center">
-                                        <div className="text-[10px] font-extrabold text-white">Toyota Innova Crysta</div>
-                                        <div className="text-[9px] text-blue-200">AC / 7 Seater Luxury</div>
+                                        <div className="text-[10px] font-extrabold text-white">Urbania</div>
+                                        <div className="text-[9px] text-blue-200">AC / 16 seats</div>
                                     </div>
                                     <a href="/contact" className="block text-center bg-blue-600 text-white font-extrabold text-[11px] py-2.5 rounded-xl shadow-lg hover:bg-blue-500 transition-colors">
                                         Book Cab Now &rarr;
