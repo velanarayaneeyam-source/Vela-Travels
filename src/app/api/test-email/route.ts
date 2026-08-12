@@ -22,16 +22,24 @@ export async function GET() {
 
         await transporter.verify();
 
+        // Check if database can find the user
+        const { PrismaClient } = await import('@prisma/client');
+        const prisma = new PrismaClient();
+        const dbUser = await prisma.user.findFirst({
+            where: { email: 'velanarayaneeyam@gmail.com' }
+        });
+
         const info = await transporter.sendMail({
             from: process.env.FROM_EMAIL || '"Vela Travels" <velanarayaneeyam@gmail.com>',
             to: user,
             subject: 'VERCEL LIVE TEST',
-            text: 'This was sent from the live Vercel server!'
+            text: `This was sent from the live Vercel server!\n\nDatabase Check:\nWas user found in Vercel's DB? ${dbUser ? 'YES' : 'NO'}`
         });
 
         return NextResponse.json({ 
             success: true, 
             message: "Email sent successfully from Vercel!",
+            userFoundInDB: !!dbUser,
             info: info.messageId
         });
     } catch (error: any) {
