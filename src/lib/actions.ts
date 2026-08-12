@@ -645,7 +645,7 @@ export async function deleteCar(id: string) {
 // --- Password Reset Actions ---
 
 export async function requestPasswordReset(formData: FormData) {
-    const identifier = formData.get("identifier") as string; // Email or Username
+    const identifier = (formData.get("identifier") as string)?.trim(); // Email or Username
 
     if (!identifier) throw new Error("Please enter your email or username");
 
