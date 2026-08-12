@@ -726,38 +726,43 @@ export async function resetPassword(formData: FormData) {
 }
 
 export async function registerAdmin(formData: FormData) {
-    const username = formData.get("username") as string;
-
-    // 5 attempts per IP/username per hour
-    if (!checkRateLimit(`admin_reg_${username}`, 5, 60 * 60 * 1000)) {
-        throw new Error("Too many registration attempts. Please wait an hour.");
-    }
-
-    const email = formData.get("email") as string;
-    const password = formData.get("password") as string;
-    const confirmPassword = formData.get("confirmPassword") as string;
-
-    if (!username || !email || !password) throw new Error("All fields are required");
-    if (password !== confirmPassword) throw new Error("Passwords do not match");
-    if (password.length < 8) throw new Error("Password must be at least 8 characters");
-
-    // Check if user already exists
-    const existing = await prisma.user.findFirst({
-        where: {
-            OR: [
-                { username },
-                { email }
-            ]
-        }
-    });
-
-    if (existing) {
-        throw new Error("Username or Email already registered");
-    }
-
-    const hashedPassword = await bcrypt.hash(password, 10);
-
     try {
+        const username = formData.get("username") as string;
+        const email = formData.get("email") as string;
+        const password = formData.get("password") as string;
+        const confirmPassword = formData.get("confirmPassword") as string;
+
+        // 5 attempts per username per hour
+        if (!checkRateLimit(`admin_reg_${username}`, 5, 60 * 60 * 1000)) {
+            return { success: false, error: "Too many registration attempts. Please wait an hour." };
+        }
+
+        if (!username || !email || !password) {
+            return { success: false, error: "All fields are required" };
+        }
+        if (password !== confirmPassword) {
+            return { success: false, error: "Passwords do not match" };
+        }
+        if (password.length < 8) {
+            return { success: false, error: "Password must be at least 8 characters" };
+        }
+
+        // Check if user already exists
+        const existing = await prisma.user.findFirst({
+            where: {
+                OR: [
+                    { username },
+                    { email }
+                ]
+            }
+        });
+
+        if (existing) {
+            return { success: false, error: "Username or Email already registered" };
+        }
+
+        const hashedPassword = await bcrypt.hash(password, 10);
+
         await prisma.user.create({
             data: {
                 username,
@@ -766,12 +771,12 @@ export async function registerAdmin(formData: FormData) {
                 role: "admin"
             }
         });
-    } catch (dbError: any) {
-        console.error("Admin registration DB error:", dbError);
-        throw new Error(`Database error: ${dbError.message || 'Unable to create user'}`);
-    }
 
-    return { success: true };
+        return { success: true };
+    } catch (err: any) {
+        console.error("[REGISTER_ADMIN] Error:", err);
+        return { success: false, error: err.message || "Registration failed. Please try again." };
+    }
 }
 
 // --- Carousel Actions ---

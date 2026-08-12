@@ -21,6 +21,8 @@ export default function RegisterPage() {
             if (result.success) {
                 setSuccess(true);
                 setTimeout(() => router.push("/login"), 3000);
+            } else {
+                setError(result.error || "Registration failed. Please try again.");
             }
         } catch (err: any) {
             setError(err.message || "Registration failed");
@@ -28,6 +30,7 @@ export default function RegisterPage() {
             setLoading(false);
         }
     };
+
 
     if (success) {
         return (
