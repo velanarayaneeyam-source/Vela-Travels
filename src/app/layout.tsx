@@ -46,11 +46,7 @@ export const metadata: Metadata = {
     address: true,
     email: true
   },
-  icons: {
-    icon: '/logo.svg',
-    shortcut: '/logo.svg',
-    apple: '/logo.svg',
-  },
+
   openGraph: {
     title: "Vela Travels | Car Rental & Taxi Service in Nenmara, Palakkad",
     description: "Premier Car Rental & Tour Operator located at Nenmara, Palakkad. Premium cars, airport cabs & custom tour packages.",
