@@ -18,7 +18,7 @@ const siteUrl = process.env.NEXTAUTH_URL || 'https://velatravelsco.com';
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Vela Travels | Car Rental & Taxi Service in Nenmara, Palakkad",
+    default: "Vela Travels | Premium Fleets & Taxi Service in Nenmara, Palakkad",
     template: "%s | Vela Travels Nenmara"
   },
   icons: {
@@ -26,11 +26,11 @@ export const metadata: Metadata = {
     shortcut: '/logo.svg',
     apple: '/logo.svg',
   },
-  description: "Best Car Rental, Taxi Service & Tour Operator in Nenmara, Palakkad, Kerala. Luxury cars, airport transfers & Ayurveda wellness tours.",
+  description: "Best Premium Fleets, Taxi Service & Tour Operator in Nenmara, Palakkad, Kerala. Luxury cars, airport transfers & Ayurveda wellness tours.",
   keywords: [
     "Vela Travels",
     "Vehicle Rent Kerala",
-    "Car Rent Nenmara",
+    "Premium Fleets Nenmara",
     "Car Rental Nenmara",
     "Best Tour Operator Nemmara",
     "Ayurveda Spa Massage Kerala",
@@ -48,8 +48,8 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Vela Travels | Car Rental & Taxi Service in Nenmara, Palakkad",
-    description: "Premier Car Rental & Tour Operator located at Nenmara, Palakkad. Premium cars, airport cabs & custom tour packages.",
+    title: "Vela Travels | Premium Fleets & Taxi Service in Nenmara, Palakkad",
+    description: "Premier Premium Fleets & Tour Operator located at Nenmara, Palakkad. Premium cars, airport cabs & custom tour packages.",
     url: siteUrl,
     siteName: "Vela Travels",
     locale: "en_IN",
@@ -59,14 +59,14 @@ export const metadata: Metadata = {
         url: `${siteUrl}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: "Vela Travels Nenmara Palakkad Car Rental"
+        alt: "Vela Travels Nenmara Palakkad Premium Fleets"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vela Travels | Car Rental in Nenmara, Palakkad",
-    description: "Reliable Car Rental & Taxi Service at Nenmara, Palakkad, Kerala.",
+    title: "Vela Travels | Premium Fleets in Nenmara, Palakkad",
+    description: "Reliable Premium Fleets & Taxi Service at Nenmara, Palakkad, Kerala.",
     images: [`${siteUrl}/og-image.jpg`]
   },
   robots: {
