@@ -9,7 +9,8 @@ export async function GET() {
         if (!user || !pass) {
             return NextResponse.json({ 
                 success: false, 
-                message: "Missing SMTP_USER or SMTP_PASS in Vercel environment variables" 
+                message: "Missing SMTP_USER or SMTP_PASS in Vercel environment variables",
+                foundKeys: Object.keys(process.env).filter(k => k.includes('SMTP') || k.includes('FROM'))
             });
         }
 
