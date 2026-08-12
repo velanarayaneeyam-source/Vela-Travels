@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { Lock, User, AlertCircle, KeyRound } from 'lucide-react';
+import { Lock, User, AlertCircle, KeyRound, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 
 export default function LoginPage() {
@@ -69,17 +69,17 @@ export default function LoginPage() {
 
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="space-y-2">
-                            <label className="text-sm font-medium text-slate-300 ml-1">Username</label>
+                            <label className="text-sm font-medium text-slate-300 ml-1">Email</label>
                             <div className="relative group">
                                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-500 group-focus-within:text-primary transition-colors">
-                                    <User className="w-5 h-5" />
+                                    <Mail className="w-5 h-5" />
                                 </div>
                                 <input
-                                    type="text"
+                                    type="email"
                                     value={username}
                                     onChange={(e) => setUsername(e.target.value)}
                                     className="block w-full pl-11 pr-4 py-4 bg-slate-950/50 border border-white/10 rounded-2xl text-white outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-all placeholder:text-slate-600"
-                                    placeholder="Username"
+                                    placeholder="your.email@example.com"
                                     required
                                 />
                             </div>
