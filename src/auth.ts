@@ -61,6 +61,11 @@ export const authOptions: NextAuthOptions = {
                     if (user) {
                         isSuccess = await bcrypt.compare(credentials.password, user.password);
 
+                        // Block pending (unapproved) accounts from logging in
+                        if (isSuccess && (user as any).status === "pending") {
+                            throw new Error("Your account is pending approval. Please check your email or contact the site owner.");
+                        }
+
                         // Check 2FA if enabled
                         if (isSuccess && user.twoFactorSecret) {
                             if (!credentials.token) {
@@ -92,7 +97,8 @@ export const authOptions: NextAuthOptions = {
                         err.message === "Too many login attempts. Please try again after 15 minutes." ||
                         err.message === "2FA token required" ||
                         err.message === "Invalid 2FA token. Please try again." ||
-                        err.message === "Invalid username or password"
+                        err.message === "Invalid username or password" ||
+                        err.message === "Your account is pending approval. Please check your email or contact the site owner."
                     ) {
                         throw err;
                     }

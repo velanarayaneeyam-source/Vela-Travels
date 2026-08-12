@@ -37,13 +37,15 @@ export default function RegisterPage() {
             <div className="min-h-screen bg-slate-950 flex items-center justify-center p-6 text-center">
                 <div className="w-full max-w-md bg-slate-900 border border-white/10 p-12 rounded-3xl backdrop-blur-xl">
                     <CheckCircle2 className="w-16 h-16 text-emerald-500 mx-auto mb-6" />
-                    <h1 className="text-2xl font-bold text-white mb-4">Registration Successful!</h1>
-                    <p className="text-slate-400">Your admin account has been created successfully. You can now use the "Forgot Password" feature with your registered email.</p>
-                    <p className="text-slate-500 text-xs mt-4 italic text-[10px]">Redirecting you to login in 3 seconds...</p>
+                    <h1 className="text-2xl font-bold text-white mb-4">Registration Submitted!</h1>
+                    <p className="text-slate-400">Your account request has been sent to the site owner for approval.</p>
+                    <p className="text-slate-400 mt-3">You will be able to log in once your account is approved via email.</p>
+                    <p className="text-slate-500 text-[11px] mt-6 italic">No further action needed from your side.</p>
                 </div>
             </div>
         );
     }
+
 
     return (
         <div className="min-h-screen bg-slate-950 flex items-center justify-center p-6 relative overflow-hidden">

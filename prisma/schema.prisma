@@ -87,11 +87,22 @@ model User {
   email           String   @unique
   password        String
   role            String   @default("admin")
+  status          String   @default("pending")
   twoFactorSecret String?
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
   phone           String?  @unique
   backupCodes     String[] @default([])
+}
+
+model AdminApprovalToken {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  userId    String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([token])
 }
 
 model CarouselImage {

@@ -9,7 +9,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/auth";
 import { z } from "zod";
 import crypto from "crypto";
-import { sendResetEmail } from "./notifications";
+import { sendResetEmail, sendApprovalRequestEmail } from "./notifications";
 import { supabase, supabaseAdmin } from "./supabase";
 
 import { checkRateLimit } from "./ratelimit";
@@ -763,19 +763,72 @@ export async function registerAdmin(formData: FormData) {
 
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        await prisma.user.create({
+        // Create user as PENDING — cannot log in until owner approves
+        const newUser = await prisma.user.create({
             data: {
                 username,
                 email,
                 password: hashedPassword,
-                role: "admin"
+                role: "admin",
+                status: "pending",
             }
         });
+
+        // Generate a secure approval token (raw stored only in email, hashed in DB)
+        const rawToken = crypto.randomBytes(32).toString("hex");
+        const hashedToken = crypto.createHash("sha256").update(rawToken).digest("hex");
+        const expiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000); // 24 hours
+
+        await prisma.adminApprovalToken.create({
+            data: {
+                token: hashedToken,
+                userId: newUser.id,
+                expiresAt,
+            }
+        });
+
+        // Send approval email to the site owner
+        const approveUrl = `${process.env.NEXTAUTH_URL}/approve-admin/${rawToken}`;
+        await sendApprovalRequestEmail(approveUrl, username, email);
 
         return { success: true };
     } catch (err: any) {
         console.error("[REGISTER_ADMIN] Error:", err);
         return { success: false, error: err.message || "Registration failed. Please try again." };
+    }
+}
+
+export async function approveAdmin(token: string) {
+    try {
+        const hashedToken = crypto.createHash("sha256").update(token).digest("hex");
+
+        const approvalToken = await prisma.adminApprovalToken.findUnique({
+            where: { token: hashedToken }
+        });
+
+        if (!approvalToken) {
+            return { success: false, error: "Invalid approval link. It may have already been used." };
+        }
+
+        if (approvalToken.expiresAt < new Date()) {
+            // Clean up expired token
+            await prisma.adminApprovalToken.delete({ where: { id: approvalToken.id } });
+            return { success: false, error: "This approval link has expired. Ask the user to register again." };
+        }
+
+        // Activate the user account
+        await prisma.user.update({
+            where: { id: approvalToken.userId },
+            data: { status: "active" }
+        });
+
+        // Delete the token so it can't be reused
+        await prisma.adminApprovalToken.delete({ where: { id: approvalToken.id } });
+
+        return { success: true };
+    } catch (err: any) {
+        console.error("[APPROVE_ADMIN] Error:", err);
+        return { success: false, error: "Something went wrong. Please try again." };
     }
 }
 
