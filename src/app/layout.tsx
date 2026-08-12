@@ -21,6 +21,11 @@ export const metadata: Metadata = {
     default: "Vela Travels | Car Rental & Taxi Service in Nenmara, Palakkad",
     template: "%s | Vela Travels Nenmara"
   },
+  icons: {
+    icon: '/logo.svg',
+    shortcut: '/logo.svg',
+    apple: '/logo.svg',
+  },
   description: "Best Car Rental, Taxi Service & Tour Operator in Nenmara, Palakkad, Kerala. Luxury cars, airport transfers & Ayurveda wellness tours.",
   keywords: [
     "Vela Travels",
