@@ -3,23 +3,23 @@ import type { Metadata } from 'next';
 const siteUrl = process.env.NEXTAUTH_URL || 'https://vela-travels-kkos-seven.vercel.app';
 
 export const metadata: Metadata = {
-  title: "Car Rentals & Self Drive Vehicles in Nenmara, Palakkad | Vela Travels",
-  description: "Explore our fleet of luxury sedans, SUVs, self-drive cars & airport cabs in Nenmara, Ayilur (near NSS College), Palakkad. Best hourly & daily rental rates.",
+  title: "Premium Fleets & Taxi Services in Nenmara, Palakkad | Vela Travels",
+  description: "Explore our fleet of luxury sedans, SUVs, group travellers & airport cabs in Nenmara, Ayilur (near NSS College), Palakkad. Best hourly & daily booking rates.",
   keywords: [
-    "Car Rental Nenmara",
-    "Self Drive Cars Palakkad",
-    "SUV Rental Nemmara",
-    "Luxury Car Rental Palakkad",
-    "Car Rental Ayilur",
+    "Premium Fleets Nenmara",
+    "Group Travellers Palakkad",
+    "SUV Booking Nemmara",
+    "Luxury Fleet Palakkad",
+    "Premium Fleet Ayilur",
     "Taxi Service near NSS College Nemmara",
-    "Wedding Car Rental Palakkad"
+    "Wedding Car & Fleet Palakkad"
   ],
   alternates: {
     canonical: `${siteUrl}/cars`,
   },
   openGraph: {
-    title: "Car Rentals & Self Drive Vehicles in Nenmara, Palakkad | Vela Travels",
-    description: "Book luxury sedans, SUVs & self-drive cars in Nenmara, Ayilur, Palakkad. Best rates & instant booking.",
+    title: "Premium Fleets & Taxi Services in Nenmara, Palakkad | Vela Travels",
+    description: "Book luxury sedans, SUVs & group travellers in Nenmara, Ayilur, Palakkad. Best rates & instant booking.",
     url: `${siteUrl}/cars`,
     siteName: "Vela Travels",
     locale: "en_IN",
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Car Rentals & Self Drive Vehicles in Nenmara, Palakkad",
-    description: "Book luxury sedans, SUVs & self-drive cars in Nenmara, Ayilur, Palakkad.",
+    title: "Premium Fleets & Taxi Services in Nenmara, Palakkad",
+    description: "Book luxury sedans, SUVs & group travellers in Nenmara, Ayilur, Palakkad.",
     images: [`${siteUrl}/og-image.jpg`]
   }
 };

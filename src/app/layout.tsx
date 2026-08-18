@@ -29,14 +29,14 @@ export const metadata: Metadata = {
   description: "Best Premium Fleets, Taxi Service & Tour Operator in Nenmara, Palakkad, Kerala. Luxury cars, airport transfers & Ayurveda wellness tours.",
   keywords: [
     "Vela Travels",
-    "Vehicle Rent Kerala",
+    "Vehicle Booking Kerala",
     "Premium Fleets Nenmara",
-    "Car Rental Nenmara",
+    "Premium Taxi Nenmara",
     "Best Tour Operator Nemmara",
     "Ayurveda Spa Massage Kerala",
     "Cochin Airport Taxi Nenmara",
     "Coimbatore Airport Taxi Nemmara",
-    "Premium Vehicle Rentals"
+    "Premium Vehicle Fleets"
   ],
   authors: [{ name: "Vela Travels" }],
   creator: "Vela Travels",

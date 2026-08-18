@@ -66,7 +66,7 @@ export const TravelBot = ({
         }
 
         if (query.includes('service') || query.includes('offer') || query.includes('ayurveda') || query.includes('massage') || query.includes('what do you do')) {
-            return "We offer a wide range of premium travel services in Kerala:\n\n🚙 Premium Vehicle Rentals (SUVs & Travellers)\n💆‍♀️ Authentic Ayurveda & Spa Retreats\n🏖️ Guided Sightseeing Tours\n⛴️ Premium Houseboat Stays\n\nWhat would you like to explore today?";
+            return "We offer a wide range of premium travel services in Kerala:\n\n🚙 Premium Vehicle Fleets (SUVs & Travellers)\n💆‍♀️ Authentic Ayurveda & Spa Retreats\n🏖️ Guided Sightseeing Tours\n⛴️ Premium Houseboat Stays\n\nWhat would you like to explore today?";
         }
 
         if (query.includes('tour') || query.includes('destination') || query.includes('place')) {

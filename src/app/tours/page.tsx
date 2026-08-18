@@ -55,7 +55,7 @@ async function ContactCTA() {
                 <div className="absolute -top-24 -left-24 w-48 h-48 bg-white/20 rounded-full blur-3xl pointer-events-none" />
 
                 <span className="relative z-10 inline-block py-1.5 px-4 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-black uppercase tracking-[0.3em] mb-6">
-                    Custom Rental Plans
+                    Custom Fleet Plans
                 </span>
                 
                 <h2 className="relative z-10 text-3xl md:text-5xl font-black mb-6 text-slate-900 tracking-tight leading-tight">
@@ -64,7 +64,7 @@ async function ContactCTA() {
                 </h2>
                 
                 <p className="relative z-10 text-slate-600 mb-10 text-base md:text-lg max-w-xl mx-auto font-medium leading-relaxed">
-                    We specialize in <span className="text-primary font-bold">custom vehicle rentals</span> and corporate fleet services. Contact us directly to arrange your customized transportation plan.
+                    We specialize in <span className="text-primary font-bold">custom vehicle packages</span> and corporate fleet services. Contact us directly to arrange your customized transportation plan.
                 </p>
                 
                 <div className="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -123,7 +123,7 @@ export default async function ToursPage({
                     <ToursContent search={search} />
                 </Suspense>
 
-                {/* --- Rich Colorful Variety Section: Tours & Car Rental Showcase --- */}
+                {/* --- Rich Colorful Variety Section: Tours & Premium Fleets Showcase --- */}
                 <div className="mt-28 space-y-20">
                     
                     {/* Section Header */}
@@ -135,7 +135,7 @@ export default async function ToursPage({
                             Everything You Need for <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-emerald-500 to-blue-600">Kerala Travel</span>
                         </h2>
                         <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg">
-                            From scenic hill station getaways to luxury cab rentals with experienced local drivers in Nenmara & Palakkad.
+                            From scenic hill station getaways to luxury cabs and fleets with experienced local drivers in Nenmara & Palakkad.
                         </p>
                     </div>
 
@@ -161,13 +161,13 @@ export default async function ToursPage({
                             </a>
                         </div>
 
-                        {/* Card 2: Premium Car & Cab Rentals (Vibrant Royal Blue Light Card) */}
+                        {/* Card 2: Premium Taxi & Cab Fleets (Vibrant Royal Blue Light Card) */}
                         <div className="group relative bg-blue-50/90 border-2 border-blue-300 hover:border-blue-600 p-8 rounded-[2.5rem] transition-all duration-500 hover:-translate-y-2.5 overflow-hidden shadow-xl shadow-blue-500/10">
                             <div className="w-16 h-16 rounded-2xl bg-blue-600 flex items-center justify-center text-white text-3xl mb-6 shadow-lg shadow-blue-600/30 group-hover:scale-110 transition-transform">
                                 🚗
                             </div>
                             <h3 className="text-2xl font-black text-blue-950 mb-3 tracking-tight">
-                                Car & Cab Rental Fleet
+                                Premium Cabs & Taxi Fleet
                             </h3>
                             <p className="text-blue-900 text-sm font-semibold leading-relaxed mb-8">
                                 Toyota Innova Crysta, Suzuki Ertiga, Swift Dzire & Tempo Travellers available with AC for outstation trips.

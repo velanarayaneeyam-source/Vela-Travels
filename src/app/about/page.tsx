@@ -16,7 +16,7 @@ export default function AboutPage() {
                             <span className="text-primary">Experiences</span> Since 2015
                         </h1>
                         <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                            What started as a premium local car rental service has evolved into your complete travel partner. We believe that every great tour begins with a comfortable and reliable ride.
+                            What started as a premium local fleet and taxi service has evolved into your complete travel partner. We believe that every great tour begins with a comfortable and reliable ride.
                         </p>
                         <p className="text-lg text-muted-foreground leading-relaxed">
                             Our mission is to seamlessly connect our top-tier vehicle fleet with expertly curated tour packages, ensuring your journeys are just as breathtaking as your destinations.
@@ -60,7 +60,7 @@ export default function AboutPage() {
                         {
                             icon: <Star className="w-10 h-10 text-amber-500" />,
                             title: "Seamless Touring",
-                            description: "We expertly integrate our rentals with custom tour packages for a stress-free adventure.",
+                            description: "We expertly integrate our fleet and taxi services with custom tour packages for a stress-free adventure.",
                             gradient: "from-amber-500/10 to-transparent",
                             hoverBorder: "border-amber-500/30",
                             iconBg: "bg-amber-50 dark:bg-amber-500/10"

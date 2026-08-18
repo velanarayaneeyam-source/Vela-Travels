@@ -19,7 +19,7 @@ export const Footer = async () => {
     const copyright = settings.footerCopyright || `© ${new Date().getFullYear()} Vela Travels. All rights reserved.`;
 
     // Parse services from comma-separated string
-    const defaultServices = ["Premium Rentals", "Ayurveda Retreats", "Sightseeing Tours", "Houseboat Stays"];
+    const defaultServices = ["Premium Fleets", "Ayurveda Retreats", "Sightseeing Tours", "Houseboat Stays"];
     const services = settings.footerDestinations
         ? settings.footerDestinations.split(",").map((d: string) => d.trim()).filter(Boolean)
         : defaultServices;

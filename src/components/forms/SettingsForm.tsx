@@ -123,7 +123,7 @@ export const SettingsForm = ({ initialSettings }: { initialSettings: Record<stri
             icon: Type,
             fields: [
                 { key: "heroImage", label: "Hero Background Image", type: "image", icon: ImageIcon },
-                { key: "heroTitle", label: "Hero Title", type: "text", icon: Type, placeholder: "Vela Travels | Premium Vehicle Rent & Tours" },
+                { key: "heroTitle", label: "Hero Title", type: "text", icon: Type, placeholder: "Vela Travels | Premium Vehicle Fleets & Tours" },
                 { key: "heroSubtitle", label: "Hero Subtitle", type: "textarea", icon: Type, placeholder: "Travel together in comfort and style. Whether it's a family getaway, corporate trip, or group tour, we provide the perfect vehicles for your journey." },
             ]
         },
@@ -134,7 +134,7 @@ export const SettingsForm = ({ initialSettings }: { initialSettings: Record<stri
             icon: Type,
             fields: [
                 { key: "footerTagline", label: "Footer Tagline / Description", type: "textarea", icon: Type, placeholder: "Connecting you to the most beautiful destinations around the world. Your trusted travel partner since 2015." },
-                { key: "footerDestinations", label: "Destinations (comma separated)", type: "textarea", icon: MapPin, placeholder: "Premium Rentals, Ayurveda Retreats, Sightseeing Tours, Houseboat Stays" },
+                { key: "footerDestinations", label: "Destinations (comma separated)", type: "textarea", icon: MapPin, placeholder: "Premium Fleets, Ayurveda Retreats, Sightseeing Tours, Houseboat Stays" },
                 { key: "footerCopyright", label: "Copyright Text", type: "text", icon: Type, placeholder: "© 2026 Vela Travels. All rights reserved." },
             ]
         },

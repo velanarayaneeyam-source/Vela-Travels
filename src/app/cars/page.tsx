@@ -161,11 +161,11 @@ export default async function CarsPage({
                         {/* Left Text & CTAs (Bold Orange & Crisp White Typography) */}
                         <div className="lg:col-span-7 space-y-6">
                             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-400 text-xs font-black uppercase tracking-[0.2em]">
-                                🚗 Premium Taxi & Rental Fleet
+                                🚗 Premium Taxi & Vehicle Fleet
                             </span>
 
                             <h2 className="text-4xl md:text-6xl font-black text-white tracking-tight leading-[1.1]">
-                                Best <span className="text-amber-400">Car Rental & Taxi Fleet</span> For Travel Booking
+                                Best <span className="text-amber-400">Premium Cabs & Taxi Fleet</span> For Travel Booking
                             </h2>
 
                             <p className="text-slate-300 text-base md:text-lg font-medium leading-relaxed max-w-xl">
@@ -246,8 +246,8 @@ export default async function CarsPage({
                 </Suspense>
 
                 <FaqSection
-                    title="Nenmara & Palakkad Car Rental FAQs"
-                    subtitle="Common questions about self-drive rentals, taxi fares, airport pickups, and booking policies."
+                    title="Nenmara & Palakkad Fleet & Travel FAQs"
+                    subtitle="Common questions about our premium fleets, taxi fares, airport pickups, and booking policies."
                 />
 
                 <Suspense fallback={<div className="h-96 animate-pulse bg-white/5 rounded-[4rem] mt-32" />}>

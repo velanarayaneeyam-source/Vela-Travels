@@ -12,7 +12,7 @@ interface HeroSectionProps {
 }
 
 export const HeroSection = ({ settings }: HeroSectionProps) => {
-    const title = settings.heroTitle || "Premium Traveller & Vehicle Rentals";
+    const title = settings.heroTitle || "Premium Traveller & Vehicle Fleets";
     const subtitle = settings.heroSubtitle || "Travel together in comfort and style. Whether it's a family getaway, corporate trip, or group tour, we provide the perfect vehicles for your journey.";
     const heroImage = settings.heroImageUrl || "/hero-traveller.png";
 
@@ -94,7 +94,7 @@ export const HeroSection = ({ settings }: HeroSectionProps) => {
                             }} />
                         ) : (
                             <>Vela Travels <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-pink-400 font-black drop-shadow-[0_0_25px_rgba(236,72,153,0.9)]">Premium Vehicle Rent</span> & Tours</>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-pink-400 font-black drop-shadow-[0_0_25px_rgba(236,72,153,0.9)]">Premium Vehicle Fleet</span> & Tours</>
                         )}
                     </motion.h1>
 
@@ -118,12 +118,12 @@ export const HeroSection = ({ settings }: HeroSectionProps) => {
                             size="lg"
                             className="w-full sm:w-auto px-10 group bg-white text-slate-900 border-none hover:bg-white/90"
                         >
-                            Rent a Vehicle
+                            Explore Our Fleet
                             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                         </Button>
 
                         <motion.a
-                            href={`https://wa.me/${CONTACT_INFO.whatsapp}?text=Hi, I would like to inquire about renting a vehicle.`}
+                            href={`https://wa.me/${CONTACT_INFO.whatsapp}?text=Hi, I would like to inquire about booking a vehicle.`}
                             target="_blank"
                             rel="noopener noreferrer"
                             whileHover={{ scale: 1.05 }}

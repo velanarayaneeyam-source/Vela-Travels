@@ -18,8 +18,8 @@ const DEFAULT_FAQS: FaqItem[] = [
     answer: "Yes, we provide 24/7 dedicated airport transfers to Cochin International Airport (COK) and Coimbatore International Airport (CJB) with prompt pickups, experienced drivers, and transparent pricing."
   },
   {
-    question: "Are self-drive car rentals available at Vela Travels in Nenmara?",
-    answer: "Yes, we offer well-maintained luxury and economy self-drive cars with flexible hourly and daily rental packages in Nenmara and Palakkad."
+    question: "What types of premium fleets and vehicles are available at Vela Travels?",
+    answer: "We offer a diverse fleet of well-maintained premium vehicles, including luxury SUVs, multi-purpose vehicles (MPVs), force travellers, and executive cabs, tailored to your travel and touring needs in Nenmara, Palakkad, and across Kerala."
   },
   {
     question: "How can I book a cab or tour package with Vela Travels?",
@@ -40,7 +40,7 @@ interface FaqSectionProps {
 export function FaqSection({
   faqs = DEFAULT_FAQS,
   title = "Frequently Asked Questions",
-  subtitle = "Everything you need to know about our car rentals, airport taxis & tour packages in Nenmara, Palakkad."
+  subtitle = "Everything you need to know about our premium fleets, airport taxis & tour packages in Nenmara, Palakkad."
 }: FaqSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -80,7 +80,7 @@ export function FaqSection({
             <span>Got Questions?</span>
           </div>
           <h2 id="faq-heading" className="text-3xl md:text-5xl font-black text-white tracking-tight leading-tight">
-            Nenmara & Palakkad <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-amber-300 to-emerald-300 drop-shadow-[0_0_25px_rgba(99,102,241,0.6)]">Car Rental FAQs</span>
+            Nenmara & Palakkad <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-amber-300 to-emerald-300 drop-shadow-[0_0_25px_rgba(99,102,241,0.6)]">Fleet & Travel FAQs</span>
           </h2>
           <p className="text-slate-300 max-w-2xl mx-auto text-base md:text-lg font-medium leading-relaxed">
             {subtitle}
